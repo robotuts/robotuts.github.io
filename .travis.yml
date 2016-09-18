@@ -22,7 +22,7 @@ after_success:
 - git remote add origin https://github.com/${GITHUB_USER}/${GITHUB_REPO}.git
 - touch .nojekyll
 - git add -A
-- git commit -m "Generated Hugo Site by Travis CI - ${TRAVIS_BUILD_NUMBER}"
+- git commit -m "Generated Hugo Site by Travis CI [Build#${TRAVIS_BUILD_NUMBER}]"
 - git push -f "https://${GITHUB_TOKEN}@github.com/${GITHUB_USER}/${GITHUB_REPO}.git" ${TARGET_BRANCH}
 
 env:
