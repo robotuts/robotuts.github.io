@@ -1,6 +1,10 @@
 language: go
 go: 1.7
 
+branches:
+  only:
+  - source
+
 before_install:
 - git config --global user.name "${GIT_NAME}"
 - git config --global user.email "${GIT_EMAIL}"
