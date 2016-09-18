@@ -1,4 +1,4 @@
-# RoboTuts [![Build Status](https://travis-ci.org/robotuts/robotuts-website.svg?branch=master)](https://travis-ci.org/robotuts/robotuts-website)
+# RoboTuts [![Build Status](https://travis-ci.org/robotuts/robotuts.github.io.svg?branch=source)](https://travis-ci.org/robotuts/robotuts.github.io)
 
 This is RoboTuts website served by [GitHub Pages][gh-pages] and powered by
 [Hugo][hugo].

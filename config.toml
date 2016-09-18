@@ -1,4 +1,4 @@
-baseurl = "https://robotuts.github.com/"
+baseurl = "https://robotuts.github.io/"
 languageCode = "ru-ru"
 title = "RoboTuts"
 theme = "hugo-material-docs"
