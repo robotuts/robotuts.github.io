@@ -18,68 +18,94 @@ Vagrant описана в [другой статье](/vagrant).
 Его достаточно распаковать в любую удобную папку и добавить путь к ней в
 переменную среды `PYTHONPATH`.
 
-    export PYTHONPATH=/path/to/sdk/sdk-python
+```bash
+export PYTHONPATH=/path/to/sdk/sdk-python
+```
 
 Рекомендуется добавить эту команду в .bashrc (.profile, .bash_profile и
 т.п.)
 
-    echo "export PYTHONPATH=/path/to/sdk/sdk-python" >> $HOME/.bashrc
+```bash
+echo "export PYTHONPATH=/path/to/sdk/sdk-python" >> $HOME/.bashrc
+```
 
 ## Компиляция SDK
 
 Установку всех программ под Debian рекомендуется начинать со следующей команды
 
-    sudo apt update
+```bash
+sudo apt update
+```
 
 Для компиляции SDK нам потребуются Git, CMake и pip (менеджер пакетов для
 Python)
 
-    sudo apt install git cmake python-pip
+```bash
+sudo apt install git cmake python-pip
+```
 
 Разработчики SDK распространяют специальную утилиту для работы с SDK, для работы
 с SDK для Python она не нужна, но требуется для компиляции
 
-    sudo pip install qibuild
+```bash
+sudo pip install qibuild
+```
 
 После установки всего необходимого нужно создать папку, в которой будут лежать
 исходные коды SDK
 
-    mkdir sdk
-    cd sdk
+```bash
+mkdir sdk
+cd sdk
+```
 
 Инициируем в этой папке проект QiBuild
 
-    qibuild init
+```bash
+qibuild init
+```
 
 Добавим к проекту все необходимые для сборки проекта зависимости
 
-    qisrc add https://github.com/aldebaran/gtest.git
-    qisrc add https://github.com/aldebaran/libqi.git
-    qisrc add https://github.com/aldebaran/libqi-python.git
+```bash
+qisrc add https://github.com/aldebaran/gtest.git
+qisrc add https://github.com/aldebaran/libqi.git
+qisrc add https://github.com/aldebaran/libqi-python.git
+```
 
 Утилита `qitoolchain` позволяет загрузить неободимые зависимости для SDK
 
-    qitoolchain create --feed-name linux64 linux64 https://github.com/aldebaran/toolchains.git
+```bash
+qitoolchain create --feed-name linux64 linux64 https://github.com/aldebaran/toolchains.git
+```
 
 Запустим конфигурацию проекта для нашей системы (linux64):
 
-    qibuild add-config linux64 -t linux64
-    qibuild configure libqi-python --config linux64 --release
+```bash
+qibuild add-config linux64 -t linux64
+qibuild configure libqi-python --config linux64 --release
+```
 
 Произведем сборку проекта. Данная команда выполняется _довольно продолжительное_
 время.
 
-    qibuild make libqi-python --config linux64 --njobs 2
+```bash
+qibuild make libqi-python --config linux64 --njobs 2
+```
 
 После того как сборка будет завершена, стоит проверить, что библиотека
 скомпилирована корректно, для этого нужно добавить следующие пути в переменную
 системы `PYTHONPATH`:
 
-    export PYTHONPATH=/home/vagrant/sdk/aldebaran/libqi-python/build-linux64/sdk/lib/python2.7/site-packages:/home/vagrant/sdk/aldebaran/libqi-python/build-linux64/sdk/lib
+```bash
+export PYTHONPATH=/home/vagrant/sdk/aldebaran/libqi-python/build-linux64/sdk/lib/python2.7/site-packages:/home/vagrant/sdk/aldebaran/libqi-python/build-linux64/sdk/lib
+```
 
 Проверим, что все работает, для этого импортируем главный модуль `qi` в Python
 
-    python -c "import qi"
+```bash
+python -c "import qi"
+```
 
 В случае успеха данная команда должна завершиться без каких-либо сообщений.
 
