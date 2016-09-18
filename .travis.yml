@@ -17,13 +17,13 @@ script:
 - hugo
 
 after_success:
-  - git clone https://github.com/${GITHUB_USER}/${GITHUB_REPO}.git
-  - cd ${GITHUB_REPO}
-  - rsync -az --delete --exclude '.git*' ../public/ .
-  - touch .nojekyll
-  - git add -A
-  - git commit -m "Generated Hugo Site by Travis CI - ${TRAVIS_BUILD_NUMBER}"
-  - git push -f -q "https://${GITHUB_TOKEN}@github.com/${GITHUB_USER}/${GITHUB_REPO}.git" ${TARGET_BRANCH}
+- cd public
+- git init
+- git remote add origin https://github.com/${GITHUB_USER}/${GITHUB_REPO}.git
+- touch .nojekyll
+- git add -A
+- git commit -m "Generated Hugo Site by Travis CI - ${TRAVIS_BUILD_NUMBER}"
+- git push -f "https://${GITHUB_TOKEN}@github.com/${GITHUB_USER}/${GITHUB_REPO}.git" ${TARGET_BRANCH}
 
 env:
   global:
