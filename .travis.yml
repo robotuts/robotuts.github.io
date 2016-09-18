@@ -1,8 +1,28 @@
 language: go
 go: 1.7
 
+before_install:
+- git config --global user.name "${GIT_NAME}"
+- git config --global user.email "${GIT_EMAIL}"
+
 install:
 - go get -u -v github.com/spf13/hugo
 
 script:
 - hugo
+
+after_success:
+  - git clone https://github.com/${GITHUB_USER}/${GITHUB_REPO}.git
+  - cd ${GITHUB_REPO}
+  - rsync -az --delete --exclude '.git*' ../public/ .
+  - touch .nojekyll
+  - git add -A
+  - git commit -m "Generated Hugo Site by Travis CI - ${TRAVIS_BUILD_NUMBER}"
+  - git push -f -q "https://${GITHUB_TOKEN}@github.com/${GITHUB_USER}/${GITHUB_REPO}.git" ${TARGET_BRANCH}
+
+env:
+  global:
+  - GIT_NAME: Travis CI
+  - GITHUB_USER: robotuts
+  - GITHUB_REPO: robotuts.github.io
+  - TARGET_BRANCH: master
