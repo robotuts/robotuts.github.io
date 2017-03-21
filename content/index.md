@@ -8,3 +8,7 @@ type: index
 Наша цель -- научить студентов программировать роботов Aldebaran Nao.
 
 Последнюю версию PDF-файла можно скачать по ссылке: [Github Releases](https://github.com/robotuts/nao-tutorials-book/releases/latest/).
+
+## Общий ключ для Choregraphe
+
+    654e-4564-153c-6518-2f44-7562-206e-4c60-5f47-5f45
