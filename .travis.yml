@@ -14,11 +14,11 @@ before_install:
 - sudo dpkg -i minify-stable-linux-amd64.deb
 
 install:
-- pip install -r requirements.txt
+- pip install -q -r requirements.txt
 
 before_script:
-  - git clone --depth 1 https://github.com/${GITHUB_USER}/${GITHUB_REPO}.git --branch ${TARGET_BRANCH} --single-branch site
-  - cd site && git rm -rf . && cd ..
+- git clone --depth 1 https://github.com/${GITHUB_USER}/${GITHUB_REPO}.git --branch ${TARGET_BRANCH} --single-branch site
+- cd site && git rm -rf . && cd ..
 
 script:
 - mkdocs build
