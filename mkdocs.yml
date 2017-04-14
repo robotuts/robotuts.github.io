@@ -32,6 +32,7 @@ extra:
 # Extensions
 markdown_extensions:
   - smarty
+  - def_list
   - admonition
   - codehilite(guess_lang=false)
   - toc(permalink=true)
@@ -55,7 +56,7 @@ pages:
   - Установка: installing.md
   - Уроки:
     - Урок 1: labs/lab1.md
-    - Урок 2: labs/lab2.md
+    - 'Урок 2: Введение в QiChat': labs/lab2.md
     - 'Урок 3: Введение в libqi-python': labs/lab3.md
 
 # Google Analytics
