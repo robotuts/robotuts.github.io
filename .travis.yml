@@ -1,7 +1,6 @@
 language: python
 python: 2.7
 
-sudo: required
 
 branches:
   only:
@@ -10,8 +9,6 @@ branches:
 before_install:
 - git config --global user.name "${GIT_NAME}"
 - git config --global user.email "${GIT_EMAIL}"
-- wget -q https://bin.equinox.io/c/dhgbqpS8Bvy/minify-stable-linux-amd64.deb
-- sudo dpkg -i minify-stable-linux-amd64.deb
 
 install:
 - pip install -q -r requirements.txt
@@ -22,7 +19,6 @@ before_script:
 
 script:
 - mkdocs build
-- minify -r -o site/ site
 
 after_success:
 - cd site
