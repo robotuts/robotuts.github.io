@@ -7,12 +7,14 @@ site_url: 'https://robotuts.github.io'
 # Repository
 repo_name: 'robotuts/robotuts.github.io'
 repo_url: 'https://github.com/robotuts/robotuts.github.io'
+edit_uri: 'edit/source/docs'
 
 # Copyright
 copyright: 'Copyright &copy; 2016 - 2017 <a href="https://leonidboykov.com">Leonid Boykov</a>'
 
 # Theme
 theme: 'material'
+theme_dir: 'theme'
 
 # Options
 extra:
@@ -55,7 +57,7 @@ pages:
   - Vagrant: vagrant.md
   - Установка: installing.md
   - Уроки:
-    - Урок 1: labs/lab1.md
+    - 'Урок 1': labs/lab1.md
     - 'Урок 2: Введение в QiChat': labs/lab2.md
     - 'Урок 3: Введение в libqi-python': labs/lab3.md
 
