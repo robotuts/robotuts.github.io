@@ -5,6 +5,7 @@ This is RoboTuts website served by [GitHub Pages][gh-pages] and powered by
 [MkDocs][mkdocs].
 
 [gh-pages]: https://pages.github.com/
+[mkdocs]: http://mkdocs.org/
 
 # Todo
 
@@ -17,7 +18,6 @@ This is RoboTuts website served by [GitHub Pages][gh-pages] and powered by
 To [Martin Donath][squidfunk] for awesome [Material theme][mkdocs-material] for
 [MkDocs][mkdocs].
 
-[mkdocs]: http://mkdocs.com/
 [mkdocs-material]: https://github.com/squidfunk/mkdocs-material
 [squidfunk]: https://github.com/squidfunk
 
