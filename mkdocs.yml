@@ -54,8 +54,9 @@ markdown_extensions:
 # Page tree
 pages:
   - Главная: index.md
-  - Vagrant: vagrant.md
-  - Установка: installing.md
+  - Подготовка:
+    - 'Установка SDK': preparing/install-sdk.md
+    - Vagrant: preparing/vagrant.md
   - 'Уроки Nao':
     - 'Урок 1: Основы в Choregraphe': nao/lab1.md
     - 'Урок 2: Введение в QiChat': nao/lab2.md

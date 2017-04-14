@@ -11,7 +11,7 @@ This is RoboTuts website served by [GitHub Pages][gh-pages] and powered by
 # Todo
 
 - [x] Convert articles from Jekyll Site
-- [ ] Convert AsciiDoctor to Markdown
+- [x] Convert AsciiDoctor to Markdown
 - [ ] Build PDF from MkDocs (?)
 
 # Acknowledgements

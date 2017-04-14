@@ -192,11 +192,11 @@ proposal: %tag answer2
 
 * Сперва нужно запустить _Choregraphe_ и подключить к ней робота, как было
 	описано в предыдущей лабораторной, при помощи кнопки `[connect to]`
-	![connect to button](../images/btn/connect.png).
+	![connect to button](/images/btn/connect.png).
 * Затем в меню, появляющемуся по правому клику по пустому серому полю панели
 	блок-схем, выберите `[Create new box] > [Dialog...]`.
 
-![create dialog screenshot](../images/screenshots/lab2-create-dialog.png)
+![create dialog screenshot](/images/screenshots/lab2-create-dialog.png)
 
 * В появившемся окне кликните по кнопке `[Add a new topic]`, где в `Name`
 	напишите название диалога без пробелов, например, `HelloWorld`. Также там
@@ -204,7 +204,7 @@ proposal: %tag answer2
 	установлено только два языка, а не все, которые есть в списке. Затем нажмите
 	на кнопки `[Add]` и `[OK]`.
 
-![specify topic screenshot](../images/screenshots/lab2-specify-topic.png)
+![specify topic screenshot](/images/screenshots/lab2-specify-topic.png)
 
 * Соедините иконку созданного диалога со входом программы или предыдущими
 	заданными действиями (например, `Set language` для переключения языка).
@@ -221,9 +221,9 @@ u:(Good morning) Let's start a wonderful day
 
 Интерфес программы должен выглядеть примерно как на рисунке ниже:
 
-![app example screenshot](../images/screenshots/lab2-app-example.png)
+![app example screenshot](/images/screenshots/lab2-app-example.png)
 
-* Запустите программу кнопкой `[Play]` ![play button](../images/btn/play.png).
+* Запустите программу кнопкой `[Play]` ![play button](/images/btn/play.png).
 
 После этого звуком и анимацией лампочек в "глазах" робот предложит Вам сказать
 что-либо.
@@ -259,18 +259,18 @@ u:(["can you" please] stand up {now}) ok i stand up $standup=1
 
 В фигурных скобках обозначено необязательное слово, которое можно произнести или нет.
 
-* Добавьте два `[выхода]` ![onstopped button io](../images/btn-io/onstopped.png)
+* Добавьте два `[выхода]` ![onstopped button io](/images/btn-io/onstopped.png)
 	к блоку _Hello world_ (кликнуть правой кнопкой мыши по уже имеющемуся выходу
 	блока и выбрать там `Add output`).
 
-![add output screenshot](../images/screenshots/lab2-add-output.png)
+![add output screenshot](/images/screenshots/lab2-add-output.png)
 
 Выходам нужно задать отдельные названия (по умолчанию они назваются `output`)
 
 * `sit`
 * `standup`
 
-![specify output screenshot](../images/screenshots/lab2-specify-output.png)
+![specify output screenshot](/images/screenshots/lab2-specify-output.png)
 
 [//]: # (‼ я не знаю зачем следующий пункт надо проверить что он точно нужен ‼)
 [//]: # (* Добавьте 2 блока `[Flow Control] > [Time] > [Wait]` (вкладка **standard** в **Box libraries**) и соедините их с созданными выходами)
@@ -283,7 +283,7 @@ u:(["can you" please] stand up {now}) ok i stand up $standup=1
 [//]: # (image::screenshots/lab2-animation1.PNG[animation,align="center"])
 [//]: # (‼ ИЛИ ‼)
 
-![animation2 screenshot](../images/screenshots/lab2-animation2.png)
+![animation2 screenshot](/images/screenshots/lab2-animation2.png)
 
 В результате запуска программы робот должен садиться и вставать в ответ на сказанное веловеком.
 
@@ -308,10 +308,10 @@ u:^private(do you like tennis) no, I can't play tennis
 u:^private(do you like yoga) yes, would you like to do yoga with me?
 ```
 
-* Подключите их к одному `[выходу]` ![onstopped button io](../images/btn-io/onstopped.png)
-	предыдущего блока или `[входу]` ![onstart button io](../images/btn-io/onstart.png)  _скрипта_.
+* Подключите их к одному `[выходу]` ![onstopped button io](/images/btn-io/onstopped.png)
+	предыдущего блока или `[входу]` ![onstart button io](/images/btn-io/onstart.png)  _скрипта_.
 
-![themes screenshot](../images/screenshots/lab2-themes.png)
+![themes screenshot](/images/screenshots/lab2-themes.png)
 
 После запуска робот будет вести разговор на одну тему, пока вы не попросите его
 говорить о другой.
