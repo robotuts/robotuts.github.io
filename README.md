@@ -1,4 +1,4 @@
-# RoboTuts
+# Robotics Tutorials
 [![Build Status](https://travis-ci.org/robotuts/robotuts.github.io.svg?branch=source)](https://travis-ci.org/robotuts/robotuts.github.io)
 [![Dependency Status](https://gemnasium.com/badges/github.com/robotuts/robotuts.github.io.svg)](https://gemnasium.com/github.com/robotuts/robotuts.github.io)
 

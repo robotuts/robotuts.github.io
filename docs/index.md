@@ -1,9 +1,12 @@
 ## Добро пожаловать на RoboTuts
+[![Build Status](https://travis-ci.org/robotuts/robotuts.github.io.svg?branch=source)](https://travis-ci.org/robotuts/robotuts.github.io)
+[![Dependency Status](https://gemnasium.com/badges/github.com/robotuts/robotuts.github.io.svg)](https://gemnasium.com/github.com/robotuts/robotuts.github.io)
 
-Данный вебсайт подготовлен специально для студентов
-[Санкт-Петербургского Политехнического Университета Петра Великого](http://www.spbstu.ru/).
-
-Наша цель --- научить студентов программировать роботов Aldebaran Nao.
+Приветствуем на сайте Robotics Tutorials (RoboTuts)! Данный сайт создан с целью
+обучить студентов работе с роботами Aldebaran Nao. В курс уроков входит обучение
+работе с программой визуального программирования Choregraphe, а также
+программированию роботов на языке Python. Кроме уроков для Nao, сайт содержит
+вводный курс работы с системой управления виртуальными машинами Vagrant.
 
 Сайт расположен на Github Pages, для локального использования документации можно
 скачать [исходный код](https://github.com/robotuts/robotuts.github.io/archive/master.zip)
