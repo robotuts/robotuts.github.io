@@ -1,15 +1,14 @@
 ---
-date: 2016-09-18T16:26:09+03:00
 title: Установка SDK
 ---
+
 Для программирования NAO нужно установить SDK с сайта Aldebaran. Это можно
 сделать двумя способами -- скачать с сайта или скомпилировать из исходников.
 
-{{< note title="Заметка" >}}
-В данной статье описывается установка SDK в Debian (и его производные), для
-работы с SDK на Windows или macOS рекомендуется применять Vagrant. Работа с
-Vagrant описана в [другой статье](/vagrant).
-{{< /note >}}
+!!! note "Заметка"
+	В данной статье описывается установка SDK в Debian (и его производные), для
+	работы с SDK на Windows или macOS рекомендуется применять Vagrant. Работа с
+	Vagrant описана в [другой статье](/vagrant).
 
 ## Загрузка SDK
 
@@ -81,7 +80,7 @@ qitoolchain create --feed-name linux64 linux64 https://github.com/aldebaran/tool
 
 Запустим конфигурацию проекта для нашей системы (linux64):
 
-```bash
+``` bash
 qibuild add-config linux64 -t linux64
 qibuild configure libqi-python --config linux64 --release
 ```

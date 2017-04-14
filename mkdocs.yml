@@ -1,0 +1,64 @@
+# Project information
+site_name: 'Robotics Tutorials'
+site_description: 'Уроки по робототехнике для студентов'
+site_author: 'Leonid Boykov'
+site_url: 'https://robotuts.github.io'
+
+# Repository
+repo_name: 'robotuts/robotuts.github.io'
+repo_url: 'https://github.com/robotuts/robotuts.github.io'
+
+# Copyright
+copyright: 'Copyright &copy; 2016 - 2017 <a href="https://leonidboykov.com">Leonid Boykov</a>'
+
+# Theme
+theme: 'material'
+
+# Options
+extra:
+  feature:
+    tabs: false
+  palette:
+    primary: 'light blue'
+    accent: 'light blue'
+  font:
+    font: 'Roboto'
+    code: 'Roboto Mono'
+  social:
+    - type: 'github'
+      link: 'https://github.com/robotuts'
+  disqus: 'robotuts'
+
+# Extensions
+markdown_extensions:
+  - smarty
+  - admonition
+  - codehilite(guess_lang=false)
+  - toc(permalink=true)
+  - meta
+  - pymdownx.arithmatex
+  - pymdownx.betterem(smart_enable=all)
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.inlinehilite
+  - pymdownx.magiclink
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.tasklist(custom_checkbox=true)
+  - pymdownx.tilde
+
+# Page tree
+pages:
+  - Главная: index.md
+  - Vagrant: vagrant.md
+  - Установка: installing.md
+  - Уроки:
+    - Урок 1: labs/lab1.md
+    - Урок 2: labs/lab2.md
+    - 'Урок 3: Введение в libqi-python': labs/lab3.md
+
+# Google Analytics
+google_analytics:
+  - 'UA-73333143-1'
+  - 'auto'

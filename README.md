@@ -1,7 +1,10 @@
-# RoboTuts [![Build Status](https://travis-ci.org/robotuts/robotuts.github.io.svg?branch=source)](https://travis-ci.org/robotuts/robotuts.github.io)
+# RoboTuts
+[![Build Status](https://travis-ci.org/robotuts/robotuts.github.io.svg?branch=source)](https://travis-ci.org/robotuts/robotuts.github.io)
 
 This is RoboTuts website served by [GitHub Pages][gh-pages] and powered by
-[Hugo][hugo].
+[MkDocs][mkdocs].
+
+[gh-pages]: https://pages.github.com/
 
 # Todo
 
@@ -9,21 +12,15 @@ This is RoboTuts website served by [GitHub Pages][gh-pages] and powered by
 - [ ] Convert AsciiDoctor to Markdown
 - [ ] Build PDF from MkDocs (?)
 
-# Thanks
+# Acknowledgements
 
-To [digitalcraftsman][digitalcraftsman] for awesome [Material theme][hugo-material] for
-[Hugo][hugo] and [Martin Donath][squidfunk] for original theme for MkDocs.
+To [Martin Donath][squidfunk] for awesome [Material theme][mkdocs-material] for
+[MkDocs][mkdocs].
+
+[mkdocs]: http://mkdocs.com/
+[mkdocs-material]: https://github.com/squidfunk/mkdocs-material
+[squidfunk]: https://github.com/squidfunk
 
 # License
 
-This project is licensed under the MIT License.
-
-License can be found
-[here](LICENSE).
-
-[gh-pages]: https://pages.github.com/
-[hugo]: http://gohugo.io/
-[hugo-material]: https://github.com/digitalcraftsman/hugo-material-docs
-[squidfunk]: https://github.com/squidfunk
-[digitalcraftsman]: https://github.com/digitalcraftsman
-[license]: https://github.com/robotuts/robotuts-docs/blob/master/
+This project is licensed under the [MIT](LICENSE) License.

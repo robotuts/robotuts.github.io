@@ -1,32 +1,30 @@
----
-date: 2016-09-18T16:35:07+03:00
 title: Работа с Vagrant
----
+description: Установка Nao SDK при помощи виртуальной машины Vagrant
+
 Чтобы упростить работу с SDK на Windows и macOS используем Vagrant. Vagrant
 помогает установить и настроить виртуальную машину на основе конфигурационного
 файла.
 
-{{< note title="Linux" >}}
-Vagrant и все необходимые программы есть и под Linux, инструкции по установке
-см. на официальных сайтах.
-{{< /note >}}
+!!! tip "Linux"
+	Vagrant и все необходимые программы есть и под Linux, инструкции по установке
+	см. на официальных сайтах.
 
 Для работы с Vagrant нужно поставить [VirtualBox][virtualbox] и
 [Vagrant][vagrant]. После установки этих программ нужно скачать образ
 виртуальной машины с Debian. Рекомендуется использовать актуальную версию
 Debian, список доступных образов можно найти на сайте
 [https://atlas.hashicorp.com/][bento]. На момент написания статьи актуальная
-версия -- debian-8.5.
+версия -- debian-8.7.
 
 ```bash
-vagrant box add bento/debian-8.5
+vagrant box add bento/debian-8.7
 ```
 
 Перейдем в папку, в которой будем работать и выполним команду инициализации
 Vagrant.
 
 ```bash
-vagrant init bento/debian-8.5
+vagrant init bento/debian-8.7
 ```
 
 Данная команда создаст в текущем каталоге конфигурационный файл Vagrantfile.
@@ -38,7 +36,7 @@ vagrant init bento/debian-8.5
 
 Vagrant.configure(2) do |config|
   # Образ виртуальной машины
-  config.vm.box = "bento/debian-8.5"
+  config.vm.box = "bento/debian-8.7"
   # Переброс портов 9559:9559 (понадобятся для программирования NAO)
   config.vm.network :forwarded_port, guest: 9559, host: 9559
 
@@ -63,7 +61,7 @@ end
 
 ```bash
 vagrant up
-```    
+```
 
 Первый раз виртуалка устанавливается, это может занимать какое-то время, в
 следующий раз она будет запускаться быстрее.
