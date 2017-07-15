@@ -12,7 +12,7 @@ This is RoboTuts website served by [GitHub Pages][gh-pages] and powered by
 
 - [x] Convert articles from Jekyll Site
 - [x] Convert AsciiDoctor to Markdown
-- [ ] Build PDF from MkDocs (?)
+- [ ] Build PDF from MkDocs
 
 # Acknowledgements
 
