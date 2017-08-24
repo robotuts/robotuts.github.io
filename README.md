@@ -8,12 +8,6 @@ This is RoboTuts website served by [GitHub Pages][gh-pages] and powered by
 [gh-pages]: https://pages.github.com/
 [mkdocs]: http://mkdocs.org/
 
-# Todo
-
-- [x] Convert articles from Jekyll Site
-- [x] Convert AsciiDoctor to Markdown
-- [ ] Build PDF from MkDocs
-
 # Acknowledgements
 
 To [Martin Donath][squidfunk] for awesome [Material theme][mkdocs-material] for

@@ -2,10 +2,10 @@
 [![Build Status](https://travis-ci.org/robotuts/robotuts.github.io.svg?branch=source)](https://travis-ci.org/robotuts/robotuts.github.io)
 [![Dependency Status](https://gemnasium.com/badges/github.com/robotuts/robotuts.github.io.svg)](https://gemnasium.com/github.com/robotuts/robotuts.github.io)
 
-Приветствуем на сайте Robotics Tutorials (RoboTuts)! Данный сайт создан с целью
-обучить студентов работе с роботами Aldebaran Nao. В курс уроков входит обучение
-работе с программой визуального программирования Choregraphe, а также
-программированию роботов на языке Python. Кроме уроков для Nao, сайт содержит
+Приветствуем вас на сайте Robotics Tutorials (RoboTuts)! Данный сайт создан с
+целью обучить студентов работе с роботами Aldebaran Nao. В курс уроков входит
+обучение работе с программой визуального программирования Choregraphe, а также
+программирование роботов на языке Python. Кроме уроков для Nao, сайт содержит
 вводный курс работы с системой управления виртуальными машинами Vagrant.
 
 Сайт расположен на Github Pages, для локального использования документации можно
@@ -24,9 +24,3 @@
 
 **Валерия Башловкина**
 :	Редактирование текста, уроки по Choregraphe.
-
-## Общий ключ для Choregraphe
-
-```
-654e-4564-153c-6518-2f44-7562-206e-4c60-5f47-5f45
-```

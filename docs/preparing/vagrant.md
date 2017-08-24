@@ -18,8 +18,8 @@ SDK на Windows и macOS используем Vagrant. Vagrant помогает
 [Vagrant][vagrant]. После установки этих программ нужно скачать образ
 виртуальной машины с Debian. Рекомендуется использовать актуальную версию
 Debian, список доступных образов можно найти на сайте
-[https://atlas.hashicorp.com/][bento]. На момент написания статьи актуальная
-версия --- debian-8.7.
+[bento][bento]. На момент написания статьи
+актуальная версия --- debian-8.7.
 
 ```bash
 vagrant box add bento/debian-8.7
@@ -108,4 +108,4 @@ vagrant destroy
 
 [virtualbox]: https://www.virtualbox.org/wiki/Downloads
 [vagrant]: https://www.vagrantup.com/downloads.html
-[bento]: https://atlas.hashicorp.com/bento
+[bento]: https://app.vagrantup.com/bento/boxes
