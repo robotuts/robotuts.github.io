@@ -5,7 +5,7 @@ description: Программирование робота Nao на языке P
 
 !!! note "Заметка"
 	Для данной работы требуется виртуальная машина с установленными _SDK_.
-	(см. [Vagrant](/preparing/vagrant.md))
+	(см. [Vagrant](/getting-started/vagrant.md))
 
 ## Цель работы
 
