@@ -1,6 +1,7 @@
 # Robotics Tutorials
 [![Build Status](https://travis-ci.org/robotuts/robotuts.github.io.svg?branch=source)](https://travis-ci.org/robotuts/robotuts.github.io)
-[![Dependency Status](https://gemnasium.com/badges/github.com/robotuts/robotuts.github.io.svg)](https://gemnasium.com/github.com/robotuts/robotuts.github.io)
+[![Updates](https://pyup.io/repos/github/robotuts/robotuts.github.io/shield.svg)](https://pyup.io/repos/github/robotuts/robotuts.github.io/)
+[![Python 3](https://pyup.io/repos/github/robotuts/robotuts.github.io/python-3-shield.svg)](https://pyup.io/repos/github/robotuts/robotuts.github.io/)
 
 This is RoboTuts website served by [GitHub Pages][gh-pages] and powered by
 [MkDocs][mkdocs].
