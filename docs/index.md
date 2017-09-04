@@ -1,6 +1,7 @@
 ## Добро пожаловать на RoboTuts
 [![Build Status](https://travis-ci.org/robotuts/robotuts.github.io.svg?branch=source)](https://travis-ci.org/robotuts/robotuts.github.io)
-[![Dependency Status](https://gemnasium.com/badges/github.com/robotuts/robotuts.github.io.svg)](https://gemnasium.com/github.com/robotuts/robotuts.github.io)
+[![Updates](https://pyup.io/repos/github/robotuts/robotuts.github.io/shield.svg)](https://pyup.io/repos/github/robotuts/robotuts.github.io/)
+[![Python 3](https://pyup.io/repos/github/robotuts/robotuts.github.io/python-3-shield.svg)](https://pyup.io/repos/github/robotuts/robotuts.github.io/)
 
 Приветствуем вас на сайте Robotics Tutorials (RoboTuts)! Данный сайт создан с
 целью обучить студентов работе с роботами Aldebaran Nao. В курс уроков входит
@@ -24,3 +25,10 @@
 
 **Валерия Башловкина**
 :	Редактирование текста, уроки по Choregraphe.
+
+## Изменения
+
+**2017-09-05**
+:	Удален репозиторий [robotuts/vagrant-nao](https://github.com/robotuts/vagrant-nao).
+Vagrantfile доступен на вики основного проекта:
+[wiki/Vagrantfile](https://github.com/robotuts/robotuts.github.io/wiki/Vagrantfile)
