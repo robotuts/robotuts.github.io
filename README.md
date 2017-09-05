@@ -3,17 +3,18 @@
 [![Updates](https://pyup.io/repos/github/robotuts/robotuts.github.io/shield.svg)](https://pyup.io/repos/github/robotuts/robotuts.github.io/)
 [![Python 3](https://pyup.io/repos/github/robotuts/robotuts.github.io/python-3-shield.svg)](https://pyup.io/repos/github/robotuts/robotuts.github.io/)
 
-This is RoboTuts website served by [GitHub Pages][gh-pages] and powered by
-[MkDocs][mkdocs].
+This is the repository with the [Robotics Tutorials][robotuts] website source code.
 
-[gh-pages]: https://pages.github.com/
-[mkdocs]: http://mkdocs.org/
+[robotuts]: https://robotuts.github.io/
 
 # Acknowledgements
 
-To [Martin Donath][squidfunk] for awesome [Material theme][mkdocs-material] for
-[MkDocs][mkdocs].
+  * [MkDocs][mkdocs] is a Python based static-site generator
+  * Awesome [Material theme][mkdocs-material] by [Martin Donath][squidfunk]
+  * [Github Pages][gh-pages] provides free hosting for static sites
 
+[gh-pages]: https://pages.github.com/
+[mkdocs]: http://mkdocs.org/
 [mkdocs-material]: https://github.com/squidfunk/mkdocs-material
 [squidfunk]: https://github.com/squidfunk
 
