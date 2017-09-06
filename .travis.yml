@@ -10,14 +10,14 @@ before_install:
 - git config --global user.email "${GIT_EMAIL}"
 
 install:
-- pip install -q -r requirements.txt
+- make install
 
 before_script:
 - git clone --depth 1 https://github.com/${GITHUB_USER}/${GITHUB_REPO}.git --branch ${TARGET_BRANCH} --single-branch site
 - cd site && git rm -rf . && cd ..
 
 script:
-- mkdocs build
+- make build
 
 after_success:
 - cd site
