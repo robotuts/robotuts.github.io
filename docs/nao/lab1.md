@@ -3,7 +3,7 @@ title: Урок 1: Основы в Choregraphe
 description: Изучение диалоговой системы QiChat для Nao
 ---
 !!! note "Общий ключ для Choregraphe"
-	Для регистрации Choregraphe используйте ключ (указан на странице SoftBank)
+	Для регистрации Choregraphe используйте ключ (указан на странице [SoftBank](https://developer.softbankrobotics.com/us-en/downloads/nao-v5-v4))
 
 	654e-4564-153c-6518-2f44-7562-206e-4c60-5f47-5f45
 
