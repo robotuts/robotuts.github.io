@@ -19,11 +19,14 @@ before_script:
 script:
 - make build
 
-after_success:
-- cd site
-- git add --all
-- git commit -m "Generated MkDocs Site by Travis CI [Build#${TRAVIS_BUILD_NUMBER}]"
-- git push --quiet "https://${GITHUB_TOKEN}@github.com/${GITHUB_USER}/${GITHUB_REPO}.git" ${TARGET_BRANCH}
+deploy:
+  provider: pages
+  skip_cleanup: true
+  local_dir: site
+  github_token: $GITHUB_TOKEN
+  target_branch: master
+  on:
+    branch: source
 
 env:
   global:
