@@ -15,7 +15,6 @@ copyright: 'Copyright &copy; 2016 - 2017 <a href="https://leonidboykov.com">Leon
 # Theme
 theme:
   name: 'material'
-  custom_dir: 'theme'
   palette:
     primary: 'light blue'
     accent: 'light blue'
