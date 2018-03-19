@@ -1,0 +1,1140 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="Изучение диалоговой системы QiChat для Nao">
+      
+      
+        <link rel="canonical" href="https://robotuts.github.io/nao/lab2/">
+      
+      
+        <meta name="author" content="Leonid Boykov">
+      
+      
+        <meta name="lang:clipboard.copy" content="Копировать в буфер">
+      
+        <meta name="lang:clipboard.copied" content="Скопировано в буфер">
+      
+        <meta name="lang:search.language" content="ru">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="Совпадений не найдено">
+      
+        <meta name="lang:search.result.one" content="Найдено 1 совпадение">
+      
+        <meta name="lang:search.result.other" content="Найдено # совпадений">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-0.17.3, mkdocs-material-2.7.0">
+    
+    
+      
+        <title>Урок 2: Введение в QiChat</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.78aab2dc.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.6079476c.css">
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.1aa3b519.js"></script>
+    
+    
+      <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+      
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="light-blue" data-md-color-accent="light-blue">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
+    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    
+      <a href="#_1" tabindex="1" class="md-skip">
+        Перейти к содержанию
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://robotuts.github.io" title="Robotics Tutorials" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                Robotics Tutorials
+              </span>
+              <span class="md-header-nav__topic">
+                Урок 2: Введение в QiChat
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Начните печатать для поиска
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+
+  <a href="https://github.com/robotuts/robotuts.github.io/" title="Перейти к репозиторию" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      robotuts/robotuts.github.io
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="drawer">
+    <span class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </span>
+    Robotics Tutorials
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/robotuts/robotuts.github.io/" title="Перейти к репозиторию" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      robotuts/robotuts.github.io
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Главная" class="md-nav__link">
+      Главная
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Подготовка
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Подготовка
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../getting-started/install-sdk/" title="Установка SDK" class="md-nav__link">
+      Установка SDK
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../getting-started/vagrant/" title="Vagrant" class="md-nav__link">
+      Vagrant
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+    
+    <label class="md-nav__link" for="nav-3">
+      Уроки Nao
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Уроки Nao
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../lab1/" title="Урок 1: Основы в Choregraphe" class="md-nav__link">
+      Урок 1: Основы в Choregraphe
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Урок 2: Введение в QiChat
+      </label>
+    
+    <a href="./" title="Урок 2: Введение в QiChat" class="md-nav__link md-nav__link--active">
+      Урок 2: Введение в QiChat
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="toc">Содержание</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" title="Цель работы" class="md-nav__link">
+    Цель работы
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="Теория" class="md-nav__link">
+    Теория
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" title="Общие сведения" class="md-nav__link">
+    Общие сведения
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" title="Тема" class="md-nav__link">
+    Тема
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" title="Правило" class="md-nav__link">
+    Правило
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" title="Подправило" class="md-nav__link">
+    Подправило
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" title="Особенности" class="md-nav__link">
+    Особенности
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" title="Инструкции" class="md-nav__link">
+    Инструкции
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" title="Особенности" class="md-nav__link">
+    Особенности
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" title="Применение" class="md-nav__link">
+    Применение
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_11" title="Создание диалога" class="md-nav__link">
+    Создание диалога
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" title="Синонимичные конструкции" class="md-nav__link">
+    Синонимичные конструкции
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" title="Объединение скрипта и анимации" class="md-nav__link">
+    Объединение скрипта и анимации
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" title="Переключение между несколькими темами" class="md-nav__link">
+    Переключение между несколькими темами
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_15" title="Задания" class="md-nav__link">
+    Задания
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+        <li class="md-nav__item">
+          <a href="#__comments" title="Комментарии" class="md-nav__link md-nav__link--active">
+            Комментарии
+          </a>
+        </li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../lab3/" title="Урок 3: Введение в libqi-python" class="md-nav__link">
+      Урок 3: Введение в libqi-python
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="toc">Содержание</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" title="Цель работы" class="md-nav__link">
+    Цель работы
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="Теория" class="md-nav__link">
+    Теория
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" title="Общие сведения" class="md-nav__link">
+    Общие сведения
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" title="Тема" class="md-nav__link">
+    Тема
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" title="Правило" class="md-nav__link">
+    Правило
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" title="Подправило" class="md-nav__link">
+    Подправило
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" title="Особенности" class="md-nav__link">
+    Особенности
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" title="Инструкции" class="md-nav__link">
+    Инструкции
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" title="Особенности" class="md-nav__link">
+    Особенности
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" title="Применение" class="md-nav__link">
+    Применение
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_11" title="Создание диалога" class="md-nav__link">
+    Создание диалога
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" title="Синонимичные конструкции" class="md-nav__link">
+    Синонимичные конструкции
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" title="Объединение скрипта и анимации" class="md-nav__link">
+    Объединение скрипта и анимации
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" title="Переключение между несколькими темами" class="md-nav__link">
+    Переключение между несколькими темами
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_15" title="Задания" class="md-nav__link">
+    Задания
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+        <li class="md-nav__item">
+          <a href="#__comments" title="Комментарии" class="md-nav__link md-nav__link--active">
+            Комментарии
+          </a>
+        </li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/robotuts/robotuts.github.io/edit/source/docs/nao/lab2.md" title="Редактировать страницу" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                  <h1>Урок 2: Введение в QiChat</h1>
+                
+                <h2 id="_1">Цель работы<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>Цель данной работы &mdash; научиться программировать Nao на скриптовом языке
+<em>QiChat</em> в <em>Choregraphe</em> таким образом, чтобы работ мог выполнять действия в
+зависимости от условий, в том числе воспроизводять анимацию.</p>
+<h2 id="_2">Теория<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>Язык <em>QiChat</em> позволяет писать <em>Dialog Topic</em> &mdash; скрипты для Nao, с помощью
+которых можно задавать его поведение в виде диалога между пользователем и
+роботом. Мы будем создавать и запускать эти скрипты в программе <em>Choregraphe</em>.</p>
+<h3 id="_3">Общие сведения<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<h4 id="_4">Тема<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
+<p><em>Тема</em> &mdash; это скрипт, файл с расширением <code>.top</code>, расположенный в текущем
+проекте и включающий в себя правила. Её <em>заголовок</em> должен содержать как минимум
+<em>название</em> диалога и его <em>язык</em>. Например:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>topic: ~introduction ()
+language: enu
+u:(hello) hello human
+</pre></div>
+</td></tr></table>
+
+<p><em>Заголовок</em> &mdash; это первые две строки, <code>topic: ~introduction ()</code> и <code>language:
+*enu</code>, где первая задаёт тему диалога, а вторая указывает, что разговор будет
+вестись на английском языке (русский язык обозначается <code>rur</code>, весь список
+поддерживаемых языков можно посмотреть на сайте ‼ссылка). Последняя строчка &ndash;
+скрипт из одного <em>правила</em>, согласно которому в ответ на сказанное человеком
+<code>hello</code> робот должен ответить <code>hello human</code>.</p>
+<h4 id="_5">Правило<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
+<p><em>Правила</em> соотносят вводные данные от человека (то, что он говорит) с выходными
+данными робота (то, что робот отвечает или делает). Правила начинаются с новой
+строки и индикатора <code>u:</code>. Далее в круглых скобках указываются слова человека, а
+вне их &mdash; ответ робота.</p>
+<p>При помощи разделителей, специальных символов, а также функций и свойств можно
+создавать мощные правила, которые в одной строке будут учитывать множество
+разных случаев. О них будет сказано далее.</p>
+<p>В примере выше был представлен пример простого правила, которое конкретной фразе
+человека (<code>hello</code>) сопоставляет конкретный ответ робота (<code>hello human</code>). Помимо
+простых правил, существуют ещё два вида: <em>подправила</em> и <em>инструкции</em>.</p>
+<h4 id="_6">Подправило<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
+<p><em>Подправила</em> позволяют создавать несколько контекстов в рамках одной беседы, при
+этом конкретные подправила активируются только в том случае, если активировано
+соответствующее  (т.е. более высокого уровня) пользовательское правило или
+инструкция.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>u:(input1) answer1
+   u1:(input2) answer2
+   u1:(input3) answer3
+     u2:(input4) answer4
+        u3:(input5) answer5
+     u2:(input6) answer6
+
+proposal: sentence
+   u1:(input7) answer
+   u1:(input8) answer
+</pre></div>
+</td></tr></table>
+
+<p>Здесь <code>u1:</code>, <code>u2:</code> и <code>u3:</code> &mdash; пользовательские подправила. Отступы отражают
+отношения между правилами и их подправилами.</p>
+<h5 id="_7">Особенности<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h5>
+<p>Во-первых, <em>пользовательские правила</em> и <em>инструкции</em> активны, когда неактивны
+<strong>подправила</strong>.</p>
+<ul>
+<li>Если выполняется условие <code>(input1)</code> и активируется <em>правило</em> <code>u:</code>, то
+    управление переходит к его подправилам <code>u1:</code>, но при этом другие
+    <em>пользовательские правила</em> верхнего уровня <code>u:</code> остаются активны.</li>
+<li>Если выполняется одно из условий подправил <code>u1:</code> (<code>(input2)</code> или <code>(input2)</code>),
+    то активируется соответствующее подправило. В данном примере или выводится
+    <code>answer2</code>, или управление переходит к правилу <code>u2:</code>, а правила уровня <code>u1:</code>
+    деактивируются.</li>
+<li>Если в любое время активируется другое <em>пользовательское правило</em> <code>u:</code>, то
+    остальные подправила деактивируются.</li>
+</ul>
+<p>Если требуется находиться в рамках текущего правила, даже если уже было
+задействовано соответствующее подправило (т.е. роботом был дан ответ),
+используется  команда <code>^stayInScope</code>:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>u:(input) answer
+   u1:(input1) answer1 ^stayInScope
+   u1:(input2) answer2
+</pre></div>
+</td></tr></table>
+
+<p>То есть, даже ответив <code>answer1</code> на <code>input1</code>, робот не выйдет из контекта и
+сможет отреагировать также и на <code>input2</code>.</p>
+<h4 id="_8">Инструкции<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h4>
+<p><em>Инструкции</em> &mdash; это список фраз или действий, которые робот высказывает или
+делает последовательно, реагируя на одно общее ключевое слово.</p>
+<p><strong>Синтаксис:</strong></p>
+<p>Последовательность действий инструкции описывается следующим образом в заголовке скрипта:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>proposal: step1
+proposal: step2
+proposal: step3
+proposal: step4
+</pre></div>
+</td></tr></table>
+
+<p>В теле скрипта переход между пунктами активируется фразой человека, например,
+<code>next</code>, и <em>функцией последовательности</em>:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>u:(next) ^nextProposal
+</pre></div>
+</td></tr></table>
+
+<h4 id="_9">Особенности<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h4>
+<p>Для переключения может использоваться одна из следующих <em>функций
+последовательности</em>, помимо приведённой в примере <code>^nextProposal</code>:</p>
+<ul>
+<li><code>^previousProposal</code></li>
+<li><code>^sameProposal</code></li>
+<li><code>^goto</code></li>
+<li><code>^gotoRandom</code></li>
+<li><code>^gotoReactivate</code></li>
+<li><code>^topicTag</code></li>
+</ul>
+<p>При вызове функции <code>^sameProposal</code> робот повторяет последнее предложение в теме,
+<code>^previousProposal</code> &mdash; шедшее перед ним.</p>
+<p>В других случаях, когда пункт инструкции высказан, робот уже не может его
+повторить. Однако может быть использована функция <code>^gotoReactivate</code>:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>proposal: %tag Answer
+u:(input) ^gotoReactivate(tag)
+</pre></div>
+</td></tr></table>
+
+<p>Она позволяет перейти к неактивному пункту инструкции, помеченному
+соответствующим тегом, и запусть его снова.</p>
+<p>Ключевое слово <code>%tag</code> может быть применимо не только к пунктам инструкции, но и
+просто к правилам:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>proposal: %tag sentence
+u:(input) %tag answer
+</pre></div>
+</td></tr></table>
+
+<p>Оно указывает на одно или неколько инструкций или правил и позволяет напрямую
+перейти к нему (ним). Функция <code>^goto</code> может быть также использована, чтобы
+обозначить эквивалентными несколько фраз, которые могут поступить от человека,
+то есть, робот может давать на них один и тот же ответ.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>u: (input1) %tag answer
+u: (input2) ^goto(tag)
+u: (input3) smth ^goto(tag)
+</pre></div>
+</td></tr></table>
+
+<p>Функция <code>^gotoRandom</code> работает аналогичным образом, только в случае, если одним
+тегом помечено несколько выражений, она случайным образом выбирает одно.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>u:(input) ^gotoRandom(tag)
+proposal: %tag answer1
+proposal: %tag answer2
+</pre></div>
+</td></tr></table>
+
+<p>Так же используется <code>^topicTag</code>, но для перехода к отмеченному тегом <code>%tag</code>
+ответу из другой темы <code>topic</code>.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>^topicTag(topic,tag)
+</pre></div>
+</td></tr></table>
+
+<h3 id="_10">Применение<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<h4 id="_11">Создание диалога<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Сперва нужно запустить <em>Choregraphe</em> и подключить к ней робота, как было
+    описано в предыдущей лабораторной, при помощи кнопки <code>[connect to]</code>
+    <img alt="connect to button" src="../../images/btn/connect.png" />.</li>
+<li>Затем в меню, появляющемуся по правому клику по пустому серому полю панели
+    блок-схем, выберите <code>[Create new box] &gt; [Dialog...]</code>.</li>
+</ul>
+<p><img alt="create dialog screenshot" src="../../images/screenshots/lab2-create-dialog.png" /></p>
+<ul>
+<li>В появившемся окне кликните по кнопке <code>[Add a new topic]</code>, где в <code>Name</code>
+    напишите название диалога без пробелов, например, <code>HelloWorld</code>. Также там
+    можно выбрать язык, однако следует учитывать, что на роботе одновременно
+    установлено только два языка, а не все, которые есть в списке. Затем нажмите
+    на кнопки <code>[Add]</code> и <code>[OK]</code>.</li>
+</ul>
+<p><img alt="specify topic screenshot" src="../../images/screenshots/lab2-specify-topic.png" /></p>
+<ul>
+<li>Соедините иконку созданного диалога со входом программы или предыдущими
+    заданными действиями (например, <code>Set language</code> для переключения языка).</li>
+<li>На панели контента проекта (<em>Project content</em>) дважды кликните по файлу
+    <code>HelloWorld_enu.top</code>, чтобы открыть его в редакторе скриптов (<em>Script
+    editor</em>). Можно увидеть, что в скрипте уже заполнены первые две строки его
+    названием и языком.</li>
+<li>Для примера напечатайте следующие правила:</li>
+</ul>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>u:(Hello) Hello, young Padawan
+u:(Good morning) Let&#39;s start a wonderful day
+</pre></div>
+</td></tr></table>
+
+<p>Интерфес программы должен выглядеть примерно как на рисунке ниже:</p>
+<p><img alt="app example screenshot" src="../../images/screenshots/lab2-app-example.png" /></p>
+<ul>
+<li>Запустите программу кнопкой <code>[Play]</code> <img alt="play button" src="../../images/btn/play.png" />.</li>
+</ul>
+<p>После этого звуком и анимацией лампочек в &ldquo;глазах&rdquo; робот предложит Вам сказать
+что-либо.</p>
+<ul>
+<li>Скажите <code>Good morning</code> напротив него или введите те же слова в <em>Dialog panel</em>
+    и затем нажмите <code>[enter]</code>. Робот ответит <code>Let's start a wonderful day</code></li>
+<li>Скажите (или напишите) роботу <code>Hello</code>, он должен ответить <code>Hello, young
+    Padawan</code>.</li>
+</ul>
+<h4 id="_12">Синонимичные конструкции<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Чтобы сделать более комплексное правило, можно изменить скрипт следующим
+    образом:</li>
+</ul>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>u:([hi hello wassup]) hello young padawan
+u:([&quot;tell me&quot; &quot;give me&quot;] your name) of course, my name is NAO
+</pre></div>
+</td></tr></table>
+
+<p>В квадратных скобках указываются взаимозаменяемые фразы или слова, на которые
+робот реагирует одинаково. Если использовать такую конструкцию в <em>ответе
+робота</em>, то он будет высказывать написанные фразы (слова) последовательно при
+каждой активации правила.</p>
+<h4 id="_13">Объединение скрипта и анимации<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Создайте новые правила:</li>
+</ul>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>u:([&quot;can you&quot; please] sit down {now}) ok i sit down $sit=1
+u:([&quot;can you&quot; please] stand up {now}) ok i stand up $standup=1
+</pre></div>
+</td></tr></table>
+
+<p>В фигурных скобках обозначено необязательное слово, которое можно произнести или нет.</p>
+<ul>
+<li>Добавьте два <code>[выхода]</code> <img alt="onstopped button io" src="../../images/btn-io/onstopped.png" />
+    к блоку <em>Hello world</em> (кликнуть правой кнопкой мыши по уже имеющемуся выходу
+    блока и выбрать там <code>Add output</code>).</li>
+</ul>
+<p><img alt="add output screenshot" src="../../images/screenshots/lab2-add-output.png" /></p>
+<p>Выходам нужно задать отдельные названия (по умолчанию они назваются <code>output</code>)</p>
+<ul>
+<li><code>sit</code></li>
+<li><code>standup</code></li>
+</ul>
+<p><img alt="specify output screenshot" src="../../images/screenshots/lab2-specify-output.png" /></p>
+<ul>
+<li>Добавьте на поле и присоедините к соответствующим выходам блоки
+    <code>[Motions] &gt; [Sit Down]</code> и <code>[Motions] &gt; [Stand Up]</code> (вкладка <em>standard</em> в
+    <em>Box libraries</em>). Выходы блоков анимации желательно присоединить ко входу
+    блока со скриптом. Должно получиться следующее:</li>
+</ul>
+<p><img alt="animation2 screenshot" src="../../images/screenshots/lab2-animation2.png" /></p>
+<p>В результате запуска программы робот должен садиться и вставать в ответ на сказанное веловеком.</p>
+<h4 id="_14">Переключение между несколькими темами<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Создайте два отдельных блока <code>Dialog topic</code> с названиями <em>Food</em> и <em>Sport</em> и
+    следующим содержимым:</li>
+</ul>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>topic: ~Food()
+language: enu
+u:(let&#39;s talk about food) OK, guess what I like
+u:^private(do you like fish) yes and sea food too
+u:^private(do you like meat) no, I don&#39;t
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>topic: ~Sport()
+language: enu
+u:(let&#39;s talk about sport) OK, guess what sport I like
+u:^private(do you like tennis) no, I can&#39;t play tennis
+u:^private(do you like yoga) yes, would you like to do yoga with me?
+</pre></div>
+</td></tr></table>
+
+<ul>
+<li>Подключите их к одному <code>[выходу]</code> <img alt="onstopped button io" src="../../images/btn-io/onstopped.png" />
+    предыдущего блока или <code>[входу]</code> <img alt="onstart button io" src="../../images/btn-io/onstart.png" />  <em>скрипта</em>.</li>
+</ul>
+<p><img alt="themes screenshot" src="../../images/screenshots/lab2-themes.png" /></p>
+<p>После запуска робот будет вести разговор на одну тему, пока вы не попросите его
+говорить о другой.</p>
+<p>Для перехода из одной темы в другую и фокусировки на ней используются
+пользовательские правила; в данном примере <code>&quot;Let's talk about food&quot;</code> и
+<code>&quot;Let's talk about sport&quot;</code>. Когда тема находится в фокусе</p>
+<ul>
+<li>активируются все её <em>приватные правила</em>, (<code>^private</code>),</li>
+<li>в то время как деактивируются <em>приватные правила</em> другой темы.</li>
+</ul>
+<h2 id="_15">Задания<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h2>
+<p>Создайте два диалога (тексты можно взять, например, с сайтов для обучения
+английскому языку &mdash; <a href="http://onlinenglish.ru/dialog.html">onlinenglish</a> или
+<a href="http://onlinenglish.ru/dialog.html">englishspeak</a>), обеспечить переключение
+между ними. Также в любой из тем должна запускаться как минимум одна анимация и
+быть применены теги, подправила или инструкции и конструкция с заменяемыми или
+необязательными словами.</p>
+                
+                  
+                
+              
+              
+                
+                  
+
+
+  <h2 id="__comments">Комментарии</h2>
+  <div id="disqus_thread"></div>
+  <script>
+    var disqus_config = function () {
+      this.page.url = "https://robotuts.github.io/nao/lab2/";
+      this.page.identifier =
+        "/nao/lab2/";
+    };
+    (function() {
+      var d = document, s = d.createElement("script");
+      s.src = "//robotuts.disqus.com/embed.js";
+      s.setAttribute("data-timestamp", +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+
+                
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../lab1/" title="Урок 1: Основы в Choregraphe" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Назад
+                </span>
+                Урок 1: Основы в Choregraphe
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../lab3/" title="Урок 3: Введение в libqi-python" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Вперед
+                </span>
+                Урок 3: Введение в libqi-python
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2016 - 2018 <a href="https://leonidboykov.com">Leonid Boykov</a>
+          </div>
+        
+        powered by
+        <a href="http://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+  <div class="md-footer-social">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+      <a href="https://github.com/robotuts" class="md-footer-social__link fa fa-github"></a>
+    
+  </div>
+
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.8eb9be28.js"></script>
+      
+        
+        
+          
+          <script src="../../assets/javascripts/lunr/lunr.stemmer.support.js"></script>
+          
+            
+              
+              
+                <script src="../../assets/javascripts/lunr/lunr.ru.js"></script>
+              
+            
+          
+          
+        
+      
+      <script>app.initialize({version:"0.17.3",url:{base:"../.."}})</script>
+      
+    
+    
+      
+        <script>!function(e,a,t,n,o,c,i){e.GoogleAnalyticsObject=o,e.ga=e.ga||function(){(e.ga.q=e.ga.q||[]).push(arguments)},e.ga.l=1*new Date,c=a.createElement(t),i=a.getElementsByTagName(t)[0],c.async=1,c.src="https://www.google-analytics.com/analytics.js",i.parentNode.insertBefore(c,i)}(window,document,"script",0,"ga"),ga("create","UA-73333143-1","auto"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");if(Array.prototype.map.call(links,function(e){e.host!=document.location.host&&e.addEventListener("click",function(){var a=e.getAttribute("data-md-action")||"follow";ga("send","event","outbound",a,e.href)})}),document.forms.search){var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}</script>
+      
+    
+  </body>
+</html>

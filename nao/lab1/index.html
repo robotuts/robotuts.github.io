@@ -1,0 +1,822 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="Изучение диалоговой системы QiChat для Nao">
+      
+      
+        <link rel="canonical" href="https://robotuts.github.io/nao/lab1/">
+      
+      
+        <meta name="author" content="Leonid Boykov">
+      
+      
+        <meta name="lang:clipboard.copy" content="Копировать в буфер">
+      
+        <meta name="lang:clipboard.copied" content="Скопировано в буфер">
+      
+        <meta name="lang:search.language" content="ru">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="Совпадений не найдено">
+      
+        <meta name="lang:search.result.one" content="Найдено 1 совпадение">
+      
+        <meta name="lang:search.result.other" content="Найдено # совпадений">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-0.17.3, mkdocs-material-2.7.0">
+    
+    
+      
+        <title>Урок 1: Основы в Choregraphe</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.78aab2dc.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.6079476c.css">
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.1aa3b519.js"></script>
+    
+    
+      <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+      
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="light-blue" data-md-color-accent="light-blue">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
+    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    
+      <a href="#_1" tabindex="1" class="md-skip">
+        Перейти к содержанию
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://robotuts.github.io" title="Robotics Tutorials" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                Robotics Tutorials
+              </span>
+              <span class="md-header-nav__topic">
+                Урок 1: Основы в Choregraphe
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Начните печатать для поиска
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+
+  <a href="https://github.com/robotuts/robotuts.github.io/" title="Перейти к репозиторию" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      robotuts/robotuts.github.io
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="drawer">
+    <span class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </span>
+    Robotics Tutorials
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/robotuts/robotuts.github.io/" title="Перейти к репозиторию" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      robotuts/robotuts.github.io
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Главная" class="md-nav__link">
+      Главная
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Подготовка
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Подготовка
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../getting-started/install-sdk/" title="Установка SDK" class="md-nav__link">
+      Установка SDK
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../getting-started/vagrant/" title="Vagrant" class="md-nav__link">
+      Vagrant
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+    
+    <label class="md-nav__link" for="nav-3">
+      Уроки Nao
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Уроки Nao
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Урок 1: Основы в Choregraphe
+      </label>
+    
+    <a href="./" title="Урок 1: Основы в Choregraphe" class="md-nav__link md-nav__link--active">
+      Урок 1: Основы в Choregraphe
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="toc">Содержание</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" title="Цель работы" class="md-nav__link">
+    Цель работы
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="Теория" class="md-nav__link">
+    Теория
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nao-choregraphe" title="Подключение Nao к Choregraphe" class="md-nav__link">
+    Подключение Nao к Choregraphe
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" title="Блоки и первая фраза" class="md-nav__link">
+    Блоки и первая фраза
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" title="Параллельные действия и первые движения" class="md-nav__link">
+    Параллельные действия и первые движения
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" title="События и сенсоры" class="md-nav__link">
+    События и сенсоры
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" title="Задания" class="md-nav__link">
+    Задания
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+        <li class="md-nav__item">
+          <a href="#__comments" title="Комментарии" class="md-nav__link md-nav__link--active">
+            Комментарии
+          </a>
+        </li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../lab2/" title="Урок 2: Введение в QiChat" class="md-nav__link">
+      Урок 2: Введение в QiChat
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../lab3/" title="Урок 3: Введение в libqi-python" class="md-nav__link">
+      Урок 3: Введение в libqi-python
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="toc">Содержание</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" title="Цель работы" class="md-nav__link">
+    Цель работы
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="Теория" class="md-nav__link">
+    Теория
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nao-choregraphe" title="Подключение Nao к Choregraphe" class="md-nav__link">
+    Подключение Nao к Choregraphe
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" title="Блоки и первая фраза" class="md-nav__link">
+    Блоки и первая фраза
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" title="Параллельные действия и первые движения" class="md-nav__link">
+    Параллельные действия и первые движения
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" title="События и сенсоры" class="md-nav__link">
+    События и сенсоры
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" title="Задания" class="md-nav__link">
+    Задания
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+        <li class="md-nav__item">
+          <a href="#__comments" title="Комментарии" class="md-nav__link md-nav__link--active">
+            Комментарии
+          </a>
+        </li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/robotuts/robotuts.github.io/edit/source/docs/nao/lab1.md" title="Редактировать страницу" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                  <h1>Урок 1: Основы в Choregraphe</h1>
+                
+                <div class="admonition note">
+<p class="admonition-title">Общий ключ для Choregraphe</p>
+<p>Для регистрации Choregraphe используйте ключ (указан на странице <a href="https://developer.softbankrobotics.com/us-en/downloads/nao-v5-v4">SoftBank</a>)</p>
+<p>654e-4564-153c-6518-2f44-7562-206e-4c60-5f47-5f45</p>
+</div>
+<h2 id="_1">Цель работы<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>Цель данной работы &mdash; ознакомление с принципом работы с <em>Choregraphe</em>,
+подключение робота к программе и изучение её базовых модулей.</p>
+<h2 id="_2">Теория<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h3 id="nao-choregraphe">Подключение Nao к Choregraphe<a class="headerlink" href="#nao-choregraphe" title="Permanent link">&para;</a></h3>
+<p>Перед выполнением работы следует подлючить робота к <em>Choregraphe</em>. Откройте
+список доступных роботов. Для этого перейдите в меню <code>[Connection] &gt; [Connect
+to...]</code> или нажмите на панели инструментов кнопку <img alt="connect to button" src="../../images/btn/connect.png" />.
+В появившемся окне подключитесь к нужному роботу. Если в списке отсутствует
+требуемый робот (такое может случиться, если в системе не установлена служба
+<em>Apple Bonjour</em>), то просто укажите справа нужный IP-адрес и порт (по умолчанию &mdash;
+<code>9559</code>, его можно не менять). Чтобы узнать IP робота, нажмите на его <em>Chest
+Button</em>.</p>
+<h3 id="_3">Блоки и первая фраза<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>В <em>Choregaphe</em> основной элемент визуального программирования &mdash; <em>блок</em>. У
+каждого блока есть один или несколько входов (слева) и выходов (справа). Входы
+управляют запуском и остановкой блока, а выходы позволяют возвращать результат
+работы блока. Верхний вход <img alt="onstart button io" src="../../images/btn-io/onstart.png" />
+запускает работу блока по сигналу, нижний вход <img alt="onstop button io" src="../../images/btn-io/onstop.png" />
+&mdash; прерывает по сигналу. Выход <img alt="onstopped button io" src="../../images/btn-io/onstopped.png" />
+отправляет сигнал после того, как полностью завершилось действие, записанное в
+блоке. Если выходов у блока больше одного, то верхний будет задействован при
+успешном окончании действия, а нижний &mdash; при прерывании из-за ошибки. Для
+каждого конкретного блока описание тех или иных элементов можно посмотреть, если
+навести мышку на соответсвующую иконку и задержать на несколько секунд. Сам
+сигнал отображается зеленым кружком на соединительных линиях, по которым
+проходит. Также у многих блоков имеются параметры, список которых можно вызвать,
+кликнув по иконке гаечного ключа <img alt="wrench button io" src="../../images/btn-io/wrench.png" />.</p>
+<p>Рассмотрим простейший пример: научим робота произносить первую фразу. Для этого
+нам понадобится блок <code>Say</code>, который расположен на вкладке <em>standard</em> (панель
+<em>Box libraries</em>) в папке <code>[Audio] &gt; [Voice]</code>. Просто перетяните блок <code>Say</code> на
+рабочее пространство (центральная часть программы). Если панели <em>Box libraries</em>
+нигде нет, то откройте её из меню <code>[View] &gt; [Box libraries]</code>.</p>
+<p>При этом стоит учитывать, что, хотя робот поддерживает множество языков,
+самостоятельно под введённый текст он не подстраивается. Чтобы избежать ошибок в
+произношении, очень желательно добавлять перед каждым блоком <code>Say</code> блок <code>Set
+Language</code>, который находится в библиотеке блоков в папке <code>[Audio] &gt; [Voice]</code>. Он
+позволяет настроить язык, который будет использоваться в <code>Say</code>, для этого нужно
+выбрать его в <em>параметрах</em> <img alt="wrench button io" src="../../images/btn-io/wrench.png" />
+блока. Также стоит проверить, правильный ли язык выставлен внутри самого блока
+<code>Say</code>: кликните по нему дважды, чтобы открыть, и удостоверьтесь, что в блоке
+<code>Localized text</code> выбран английский.</p>
+<p><img alt="sayinside screenshot" src="../../images/screenshots/lab1-sayinside.png" /></p>
+<p>Всего на роботе доступно два языка одновременно (возможно, в дальнейшем
+<code>Aldebaran Robotics</code> научатся загружать больше пакетов на робота, но на данный
+момент это не случилось), и, если ничего странного вроде переустановки с
+роботами не произошло, то в данном случае это английский и русский. Как и многие
+другие модули, которые влияют на настройки робота, модуль <code>Set Language</code>
+изменяет настройки робота перманентно, это значит, что после завершения
+программы язык не изменится обратно. Поэтому желательно добавить перед выходом
+из программы еще один блок <code>Set Language</code> в котором язык снова изменится на
+английский. Кроме организационных моментов, это поможет в дальнейшем, когда мы
+начнем распознавание голоса &mdash; встроенная библиотека лучше работает с
+английской речью, чем с русской.</p>
+<p><img alt="langselect screenshot" src="../../images/screenshots/lab1-langselect.png" /></p>
+<p>Для запуска примера соедините начало программы <img alt="onstart button io" src="../../images/btn-io/onstart.png" />
+со входом блока <img alt="onstart button io" src="../../images/btn-io/onstart.png" />, а затем выход
+блока <img alt="onstopped button io" src="../../images/btn-io/onstopped.png" /> с выходом программы
+<img alt="onstopped button io" src="../../images/btn-io/onstopped.png" />. Чтобы запустить программу,
+выберите в меню <code>[Connection] &gt; [Upload to robot and Play]</code> или нажмите на
+соответствующую кнопку на панели наверху <img alt="play button" src="../../images/btn/play.png" />
+или <span class="keys"><kbd class="key-f5">F5</kbd></span> на клавиатуре.</p>
+<div class="admonition tip">
+<p class="admonition-title">Подсказка</p>
+<p>Чем больше схема, тем сложнее ее читать, а значит и искать в ней ошибки.
+Рекомендуется создать новый составной блок (подобно блоку <code>Say</code>): в
+контекстном меню (правая кнопка мыши) в центральной области выберите
+<code>[Create a new box] &gt; [Diagram...]</code>, дайте ему любое имя и нажмите <code>[OK]</code>.
+Переместите блоки выбора языка и речи внутрь нового блока (при помощи
+обычных команд <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-x">X</kbd></span>, <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-v">V</kbd></span>).</p>
+</div>
+<p>Убедитесь, что после создания нового блока функциональность не изменилась, и переходите к следующему заданию.</p>
+<h3 id="_4">Параллельные действия и первые движения<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>В <em>Choregraphe</em> каждый выход можно подключить сразу к нескольким входам, в таком
+случае начнется параллельное выполнение нескольких действий. Очевидно, что
+действия не длятся равное количество времени, например, робот может произнести
+фразу в разы быстрее, чем пройти значительное расстояние по земле. В некоторых
+случаях требуется синхронизация сигналов и для этого используется модуль <code>Wait
+For Signals</code>. Данный модуль находится в директории <em>Flow Control</em>.</p>
+<p>Расположите на рабочей области модули <code>Wait For Signals</code> и блок с простейшей
+анимацией <code>Hello</code> (<code>[Motions] &gt; [Animations]</code>), а затем соедините так, как
+показано на рисунке ниже.</p>
+<p><img alt="parallel screenshot" src="../../images/screenshots/lab1-parallel.png" /></p>
+<p>В данном примере программа одновременно и параллельно запускает анимацию
+приветствия и произнесения <code>hello</code>, а поскольку работа блока речи завершается
+быстрее, программа ждет конца анимации, и только после завершения обоих
+процессов от блока <code>Wait For Signal</code> идет сигнал к выходу из программы.
+Проверьте это на роботе.</p>
+<p>Стоит отметить важный момент при анимировании робота, а именно жёсткую фиксацию
+его соединений &mdash; <code>Stiffness</code>. Включение жёсткой фиксации в <em>Choregraphe</em>
+подаёт питание к моторам Nao. Когда робот не зафиксирован, его конечности
+расслаблены, как у марионетки, и к моторам питание не подведено. Чтобы робот мог
+самостоятельно выполнять движения, включённые в программу, требуется его
+зафиксировать. В <em>Choregraphe</em> это можно сделать несколькими способами:</p>
+<ul>
+<li>кнопками на верхней панели <code>[Wake up]</code> <img alt="motors on button" src="../../images/btn/motors_on.png" />
+    &mdash; для включения фиксации и <code>[Rest]</code> <img alt="motors off button" src="../../images/btn/motors_off.png" />
+    &mdash; для отключения;</li>
+<li>блоками <code>Motor On/Off</code>, <code>SetStiffness</code>, <code>Rest</code> и <code>WakeUp</code>, где последние два
+    полностью дублируют соответствующие кнопки меню, первый фактически тоже, разве
+    что команды задаются переключателем <code>On/Off</code> в параметрах блока, а
+    <code>SetStiffness</code> позволяет отдельно назначить степень и длительность отключения
+    или включения мотора и конкретный сустав робота, который требуется
+    включить/отключить.</li>
+</ul>
+<p>Как и в конце предыдущего пункта, рекомендуется собрать результаты в отдельный
+блок, он понадобится в следующем задании.</p>
+<h3 id="_5">События и сенсоры<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<div class="admonition bug">
+<p class="admonition-title">Сенсоры</p>
+<p>Роботы довольно старые, а прошивку NaoQi давно не обновляли, после того, как
+компанию Aldebaran купила японская компания SoftBank.
+Некоторые сенсоры могут не работать.</p>
+<p>¯\_(ツ)_/¯</p>
+</div>
+<p>В этом задании мы создадим простейший диалог, который позволит вводить голосовые
+команды и осуществлять различные действия в зависимости от команды, помимо этого
+научимся использовать в программе тактильные сенсоры.</p>
+<p>Начнем с простого, с сенсоров. С левой стороны рабочего поля, под иконкой
+начального сигнала <img alt="onstart button io" src="../../images/btn-io/onstart.png" />, находится
+кнопка для добавления входов с сенсоров <img alt="add io button io" src="../../images/btn-io/add-io.png" />.
+Если на нее нажать, то всплывет окно, в котором можно указать, события каких
+сенсоров нам требуются. Найдём для примера параметр <em>MiddleTactileTouched</em>
+(удобнее воспользоваться поиском): после его добавления должна появиться новая
+иконка <img alt="stm button io" src="../../images/btn-io/stm.png" />. Сигнал от нее пойдет, если в
+то время, пока программа запущена, прикоснуться к центральному тактильному
+сенсору на голове робота. Это легко проверить, достаточно удалить сигнал(ы) от
+входной точки программы <img alt="onstart button io" src="../../images/btn-io/onstart.png" /> и
+подключить только событие <img alt="stm button io" src="../../images/btn-io/stm.png" />.</p>
+<p>Сразу после запуска программы ничего не произойдет, и приветствие сработает
+после прикосновения к голове робота.</p>
+<h2 id="_6">Задания<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<p>Создайте две программы в <em>Choregraphe</em> в соответствии с заданием:</p>
+<dl>
+<dt><strong>Задание 1</strong></dt>
+<dd>Робот должен пройтись прямо и одновременно произнести какую-нибудь фразу,а
+после выполнения обоих действий назвать температуру в голове и сесть.</dd>
+<dt><strong>Задание 2</strong></dt>
+<dd>Робот должен произносить <code>left hand</code> или <code>right hand</code> в зависимости от того,
+за какую руку его трогают.</dd>
+</dl>
+                
+                  
+                
+              
+              
+                
+                  
+
+
+  <h2 id="__comments">Комментарии</h2>
+  <div id="disqus_thread"></div>
+  <script>
+    var disqus_config = function () {
+      this.page.url = "https://robotuts.github.io/nao/lab1/";
+      this.page.identifier =
+        "/nao/lab1/";
+    };
+    (function() {
+      var d = document, s = d.createElement("script");
+      s.src = "//robotuts.disqus.com/embed.js";
+      s.setAttribute("data-timestamp", +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+
+                
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../../getting-started/vagrant/" title="Vagrant" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Назад
+                </span>
+                Vagrant
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../lab2/" title="Урок 2: Введение в QiChat" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Вперед
+                </span>
+                Урок 2: Введение в QiChat
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2016 - 2018 <a href="https://leonidboykov.com">Leonid Boykov</a>
+          </div>
+        
+        powered by
+        <a href="http://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+  <div class="md-footer-social">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+      <a href="https://github.com/robotuts" class="md-footer-social__link fa fa-github"></a>
+    
+  </div>
+
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.8eb9be28.js"></script>
+      
+        
+        
+          
+          <script src="../../assets/javascripts/lunr/lunr.stemmer.support.js"></script>
+          
+            
+              
+              
+                <script src="../../assets/javascripts/lunr/lunr.ru.js"></script>
+              
+            
+          
+          
+        
+      
+      <script>app.initialize({version:"0.17.3",url:{base:"../.."}})</script>
+      
+    
+    
+      
+        <script>!function(e,a,t,n,o,c,i){e.GoogleAnalyticsObject=o,e.ga=e.ga||function(){(e.ga.q=e.ga.q||[]).push(arguments)},e.ga.l=1*new Date,c=a.createElement(t),i=a.getElementsByTagName(t)[0],c.async=1,c.src="https://www.google-analytics.com/analytics.js",i.parentNode.insertBefore(c,i)}(window,document,"script",0,"ga"),ga("create","UA-73333143-1","auto"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");if(Array.prototype.map.call(links,function(e){e.host!=document.location.host&&e.addEventListener("click",function(){var a=e.getAttribute("data-md-action")||"follow";ga("send","event","outbound",a,e.href)})}),document.forms.search){var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}</script>
+      
+    
+  </body>
+</html>
