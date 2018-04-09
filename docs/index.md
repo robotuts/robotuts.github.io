@@ -27,6 +27,6 @@
 
 ## Изменения
 
-**2017-05-09**
+**2017-09-05**
 :	Удален репозиторий `robotuts/vagrant-nao`. Vagrantfile доступен на вики
 основного проекта: [wiki/Vagrantfile](https://github.com/robotuts/robotuts.github.io/wiki/Vagrantfile)
