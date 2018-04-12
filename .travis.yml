@@ -13,10 +13,10 @@ script:
 
 deploy:
   provider: pages
-  github-token: $GITHUB_TOKEN
-  skip-cleanup: true
-  keep-history: true
-  target-branch: master
-  local-dir: site
+  github_token: $GITHUB_TOKEN
+  skip_cleanup: true
+  keep_history: true
+  target_branch: master
+  local_dir: site
   on:
     branch: source
