@@ -62,7 +62,7 @@ markdown_extensions:
   - pymdownx.tilde
 
 # Page tree
-pages:
+nav:
   - 'Главная': index.md
   - 'Подготовка':
     - 'Установка SDK': getting-started/install-sdk.md
