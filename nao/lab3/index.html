@@ -567,7 +567,7 @@
 World</em></p>
 <p>Создайте текстовый файл и назовите его, например, <code>say-hello.py</code>. Рассмотрим
 следующий код:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
 4
@@ -594,7 +594,7 @@ World</em></p>
 можно ознакомиться в документации по адресу
 <a href="http://doc.aldebaran.com/2-1/naoqi/index.html#naoqi-api">http://doc.aldebaran.com/2-1/naoqi/index.html#naoqi-api</a>.</p>
 <p>Рассмотрим пример с несколькими сервисами одновременно:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
  4
@@ -644,7 +644,7 @@ World</em></p>
 <p>Данный пример описывает создание последовательных действий в роботе, каждое
 действие является <em>блокирующим</em>, т.е. пока оно не выполнится &mdash; следующее не
 наступит. Добавим параллельное действие:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
  4
@@ -698,7 +698,7 @@ World</em></p>
 <h3 id="_4">Извлечение данных из памяти робота<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <p>В памяти робота содержится множество данных о текущем состоянии. Рассмотрим
 алгоритм извлечения данных о гироскопе робота.</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
  4
@@ -754,7 +754,7 @@ World</em></p>
 <p>В лабораторной работе 1 мы обращались к событиям некоторых сенсоров робота.
 Аналогичные действия можно выполнять и на Python, для этого понадобится метод
 <code>run()</code> класса <code>Application</code>:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
  4
@@ -804,7 +804,7 @@ World</em></p>
 создания сервиса достаточно только создать класс на Python. Создадим класс
 <code>HelloService</code>, который по команде <code>greet(name)</code> будет приветствовать
 пользователя:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
 4
@@ -830,7 +830,7 @@ World</em></p>
 </blockquote>
 <p>Чтобы мы могли подключаться к сервису, нужно создать объект класса
 <code>HelloService</code> и зарегистрировать его в системе:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="sd">&quot;&quot;&quot;main.py&quot;&quot;&quot;</span>
 <span class="n">hello</span> <span class="o">=</span> <span class="n">HelloService</span><span class="p">(</span><span class="n">app</span><span class="o">.</span><span class="n">session</span><span class="p">)</span>
@@ -839,7 +839,7 @@ World</em></p>
 </td></tr></table>
 
 <p>Вместе с инициализацией <code>Application</code> программа-сервис выглядит следующим образом:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
  4
@@ -890,7 +890,7 @@ World</em></p>
 </ol>
 </blockquote>
 <p>Теперь мы можем использовать сервис в другом скрипте аналогично всем остальным сервисам:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
  4
