@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.3, mkdocs-material-3.0.4">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.0.4">
     
     
       
@@ -878,11 +878,11 @@ proposal: %tag answer2
 <ul>
 <li>Сперва нужно запустить <em>Choregraphe</em> и подключить к ней робота, как было
     описано в предыдущей лабораторной, при помощи кнопки <code>[connect to]</code>
-    <img alt="connect to button" src="../../images/btn/connect.png" />.</li>
+    <img alt="connect to button" src="/images/btn/connect.png" />.</li>
 <li>Затем в меню, появляющемуся по правому клику по пустому серому полю панели
     блок-схем, выберите <code>[Create new box] &gt; [Dialog...]</code>.</li>
 </ul>
-<p><img alt="create dialog screenshot" src="../../images/screenshots/lab2-create-dialog.png" /></p>
+<p><img alt="create dialog screenshot" src="/images/screenshots/lab2-create-dialog.png" /></p>
 <ul>
 <li>В появившемся окне кликните по кнопке <code>[Add a new topic]</code>, где в <code>Name</code>
     напишите название диалога без пробелов, например, <code>HelloWorld</code>. Также там
@@ -890,7 +890,7 @@ proposal: %tag answer2
     установлено только два языка, а не все, которые есть в списке. Затем нажмите
     на кнопки <code>[Add]</code> и <code>[OK]</code>.</li>
 </ul>
-<p><img alt="specify topic screenshot" src="../../images/screenshots/lab2-specify-topic.png" /></p>
+<p><img alt="specify topic screenshot" src="/images/screenshots/lab2-specify-topic.png" /></p>
 <ul>
 <li>Соедините иконку созданного диалога со входом программы или предыдущими
     заданными действиями (например, <code>Set language</code> для переключения языка).</li>
@@ -907,9 +907,9 @@ u:(Good morning) Let&#39;s start a wonderful day
 </td></tr></table>
 
 <p>Интерфес программы должен выглядеть примерно как на рисунке ниже:</p>
-<p><img alt="app example screenshot" src="../../images/screenshots/lab2-app-example.png" /></p>
+<p><img alt="app example screenshot" src="/images/screenshots/lab2-app-example.png" /></p>
 <ul>
-<li>Запустите программу кнопкой <code>[Play]</code> <img alt="play button" src="../../images/btn/play.png" />.</li>
+<li>Запустите программу кнопкой <code>[Play]</code> <img alt="play button" src="/images/btn/play.png" />.</li>
 </ul>
 <p>После этого звуком и анимацией лампочек в &ldquo;глазах&rdquo; робот предложит Вам сказать
 что-либо.</p>
@@ -946,24 +946,24 @@ u:([&quot;can you&quot; please] stand up {now}) ok i stand up $standup=1
 
 <p>В фигурных скобках обозначено необязательное слово, которое можно произнести или нет.</p>
 <ul>
-<li>Добавьте два <code>[выхода]</code> <img alt="onstopped button io" src="../../images/btn-io/onstopped.png" />
+<li>Добавьте два <code>[выхода]</code> <img alt="onstopped button io" src="/images/btn-io/onstopped.png" />
     к блоку <em>Hello world</em> (кликнуть правой кнопкой мыши по уже имеющемуся выходу
     блока и выбрать там <code>Add output</code>).</li>
 </ul>
-<p><img alt="add output screenshot" src="../../images/screenshots/lab2-add-output.png" /></p>
+<p><img alt="add output screenshot" src="/images/screenshots/lab2-add-output.png" /></p>
 <p>Выходам нужно задать отдельные названия (по умолчанию они назваются <code>output</code>)</p>
 <ul>
 <li><code>sit</code></li>
 <li><code>standup</code></li>
 </ul>
-<p><img alt="specify output screenshot" src="../../images/screenshots/lab2-specify-output.png" /></p>
+<p><img alt="specify output screenshot" src="/images/screenshots/lab2-specify-output.png" /></p>
 <ul>
 <li>Добавьте на поле и присоедините к соответствующим выходам блоки
     <code>[Motions] &gt; [Sit Down]</code> и <code>[Motions] &gt; [Stand Up]</code> (вкладка <em>standard</em> в
     <em>Box libraries</em>). Выходы блоков анимации желательно присоединить ко входу
     блока со скриптом. Должно получиться следующее:</li>
 </ul>
-<p><img alt="animation2 screenshot" src="../../images/screenshots/lab2-animation2.png" /></p>
+<p><img alt="animation2 screenshot" src="/images/screenshots/lab2-animation2.png" /></p>
 <p>В результате запуска программы робот должен садиться и вставать в ответ на сказанное веловеком.</p>
 <h4 id="_14">Переключение между несколькими темами<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h4>
 <ul>
@@ -995,10 +995,10 @@ u:^private(do you like yoga) yes, would you like to do yoga with me?
 </td></tr></table>
 
 <ul>
-<li>Подключите их к одному <code>[выходу]</code> <img alt="onstopped button io" src="../../images/btn-io/onstopped.png" />
-    предыдущего блока или <code>[входу]</code> <img alt="onstart button io" src="../../images/btn-io/onstart.png" />  <em>скрипта</em>.</li>
+<li>Подключите их к одному <code>[выходу]</code> <img alt="onstopped button io" src="/images/btn-io/onstopped.png" />
+    предыдущего блока или <code>[входу]</code> <img alt="onstart button io" src="/images/btn-io/onstart.png" />  <em>скрипта</em>.</li>
 </ul>
-<p><img alt="themes screenshot" src="../../images/screenshots/lab2-themes.png" /></p>
+<p><img alt="themes screenshot" src="/images/screenshots/lab2-themes.png" /></p>
 <p>После запуска робот будет вести разговор на одну тему, пока вы не попросите его
 говорить о другой.</p>
 <p>Для перехода из одной темы в другую и фокусировки на ней используются
@@ -1130,7 +1130,7 @@ u:^private(do you like yoga) yes, would you like to do yoga with me?
           
         
       
-      <script>app.initialize({version:"1.0.3",url:{base:"../.."}})</script>
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
       
     
     
