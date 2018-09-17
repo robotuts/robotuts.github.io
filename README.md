@@ -7,7 +7,7 @@ This is the repository with the [Robotics Tutorials][robotuts] website source co
 
 [robotuts]: https://robotuts.github.io/
 
-# Acknowledgements
+## Acknowledgements
 
   * [MkDocs][mkdocs] is a Python based static-site generator
   * Awesome [Material theme][mkdocs-material] by [Martin Donath][squidfunk]
@@ -18,6 +18,6 @@ This is the repository with the [Robotics Tutorials][robotuts] website source co
 [mkdocs-material]: https://github.com/squidfunk/mkdocs-material
 [squidfunk]: https://github.com/squidfunk
 
-# License
+## License
 
 This project is licensed under the [MIT](LICENSE) License.
