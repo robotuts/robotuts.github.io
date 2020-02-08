@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.1">
     
     
       
@@ -46,7 +46,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/application.1b62728e.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application.592ad16c.css">
       
         <link rel="stylesheet" href="../../assets/stylesheets/application-palette.a8b3c06d.css">
       
@@ -116,7 +116,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#_1" tabindex="1" class="md-skip">
+      <a href="#_1" tabindex="0" class="md-skip">
         Перейти к содержанию
       </a>
     
@@ -125,7 +125,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="https://robotuts.github.io" title="Robotics Tutorials" class="md-header-nav__button md-logo">
+        <a href="https://robotuts.github.io" title="Robotics Tutorials" aria-label="Robotics Tutorials" class="md-header-nav__button md-logo">
           
             <i class="md-icon"></i>
           
@@ -156,7 +156,7 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <input type="text" class="md-search__input" aria-label="search" name="query" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
       <label class="md-icon md-search__icon" for="__search"></label>
       <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
         &#xE5CD;
@@ -720,10 +720,10 @@
 <em>название</em> диалога и его <em>язык</em>. Например:</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
-3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>topic: ~introduction ()
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>topic: ~introduction ()
 language: enu
 u:(hello) hello human
-</pre></div>
+</code></pre></div>
 </td></tr></table>
 
 <p><em>Заголовок</em> &mdash; это первые две строки, <code>topic: ~introduction ()</code> и <code>language:
@@ -757,7 +757,7 @@ u:(hello) hello human
  7
  8
  9
-10</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>u:(input1) answer1
+10</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>u:(input1) answer1
    u1:(input2) answer2
    u1:(input3) answer3
      u2:(input4) answer4
@@ -767,7 +767,7 @@ u:(hello) hello human
 proposal: sentence
    u1:(input7) answer
    u1:(input8) answer
-</pre></div>
+</code></pre></div>
 </td></tr></table>
 
 <p>Здесь <code>u1:</code>, <code>u2:</code> и <code>u3:</code> &mdash; пользовательские подправила. Отступы отражают
@@ -791,10 +791,10 @@ proposal: sentence
 используется  команда <code>^stayInScope</code>:</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
-3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>u:(input) answer
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>u:(input) answer
    u1:(input1) answer1 ^stayInScope
    u1:(input2) answer2
-</pre></div>
+</code></pre></div>
 </td></tr></table>
 
 <p>То есть, даже ответив <code>answer1</code> на <code>input1</code>, робот не выйдет из контекта и
@@ -807,17 +807,17 @@ proposal: sentence
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
-4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>proposal: step1
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>proposal: step1
 proposal: step2
 proposal: step3
 proposal: step4
-</pre></div>
+</code></pre></div>
 </td></tr></table>
 
 <p>В теле скрипта переход между пунктами активируется фразой человека, например,
 <code>next</code>, и <em>функцией последовательности</em>:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>u:(next) ^nextProposal
-</pre></div>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>u:(next) ^nextProposal
+</code></pre></div>
 </td></tr></table>
 
 <h4 id="_9">Особенности<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h4>
@@ -836,9 +836,9 @@ proposal: step4
 <p>В других случаях, когда пункт инструкции высказан, робот уже не может его
 повторить. Однако может быть использована функция <code>^gotoReactivate</code>:</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>proposal: %tag Answer
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>proposal: %tag Answer
 u:(input) ^gotoReactivate(tag)
-</pre></div>
+</code></pre></div>
 </td></tr></table>
 
 <p>Она позволяет перейти к неактивному пункту инструкции, помеченному
@@ -846,9 +846,9 @@ u:(input) ^gotoReactivate(tag)
 <p>Ключевое слово <code>%tag</code> может быть применимо не только к пунктам инструкции, но и
 просто к правилам:</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>proposal: %tag sentence
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>proposal: %tag sentence
 u:(input) %tag answer
-</pre></div>
+</code></pre></div>
 </td></tr></table>
 
 <p>Оно указывает на одно или неколько инструкций или правил и позволяет напрямую
@@ -857,26 +857,26 @@ u:(input) %tag answer
 то есть, робот может давать на них один и тот же ответ.</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
-3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>u: (input1) %tag answer
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>u: (input1) %tag answer
 u: (input2) ^goto(tag)
 u: (input3) smth ^goto(tag)
-</pre></div>
+</code></pre></div>
 </td></tr></table>
 
 <p>Функция <code>^gotoRandom</code> работает аналогичным образом, только в случае, если одним
 тегом помечено несколько выражений, она случайным образом выбирает одно.</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
-3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>u:(input) ^gotoRandom(tag)
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>u:(input) ^gotoRandom(tag)
 proposal: %tag answer1
 proposal: %tag answer2
-</pre></div>
+</code></pre></div>
 </td></tr></table>
 
 <p>Так же используется <code>^topicTag</code>, но для перехода к отмеченному тегом <code>%tag</code>
 ответу из другой темы <code>topic</code>.</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>^topicTag(topic,tag)
-</pre></div>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>^topicTag(topic,tag)
+</code></pre></div>
 </td></tr></table>
 
 <h3 id="_10">Применение<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
@@ -907,9 +907,9 @@ proposal: %tag answer2
 <li>Для примера напечатайте следующие правила:</li>
 </ul>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>u:(Hello) Hello, young Padawan
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>u:(Hello) Hello, young Padawan
 u:(Good morning) Let&#39;s start a wonderful day
-</pre></div>
+</code></pre></div>
 </td></tr></table>
 
 <p>Интерфес программы должен выглядеть примерно как на рисунке ниже:</p>
@@ -931,9 +931,9 @@ u:(Good morning) Let&#39;s start a wonderful day
     образом:</li>
 </ul>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>u:([hi hello wassup]) hello young padawan
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>u:([hi hello wassup]) hello young padawan
 u:([&quot;tell me&quot; &quot;give me&quot;] your name) of course, my name is NAO
-</pre></div>
+</code></pre></div>
 </td></tr></table>
 
 <p>В квадратных скобках указываются взаимозаменяемые фразы или слова, на которые
@@ -945,9 +945,9 @@ u:([&quot;tell me&quot; &quot;give me&quot;] your name) of course, my name is NA
 <li>Создайте новые правила:</li>
 </ul>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>u:([&quot;can you&quot; please] sit down {now}) ok i sit down $sit=1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>u:([&quot;can you&quot; please] sit down {now}) ok i sit down $sit=1
 u:([&quot;can you&quot; please] stand up {now}) ok i stand up $standup=1
-</pre></div>
+</code></pre></div>
 </td></tr></table>
 
 <p>В фигурных скобках обозначено необязательное слово, которое можно произнести или нет.</p>
@@ -980,24 +980,24 @@ u:([&quot;can you&quot; please] stand up {now}) ok i stand up $standup=1
 2
 3
 4
-5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>topic: ~Food()
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>topic: ~Food()
 language: enu
 u:(let&#39;s talk about food) OK, guess what I like
 u:^private(do you like fish) yes and sea food too
 u:^private(do you like meat) no, I don&#39;t
-</pre></div>
+</code></pre></div>
 </td></tr></table>
 
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
 4
-5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>topic: ~Sport()
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>topic: ~Sport()
 language: enu
 u:(let&#39;s talk about sport) OK, guess what sport I like
 u:^private(do you like tennis) no, I can&#39;t play tennis
 u:^private(do you like yoga) yes, would you like to do yoga with me?
-</pre></div>
+</code></pre></div>
 </td></tr></table>
 
 <ul>
@@ -1099,16 +1099,16 @@ u:^private(do you like yoga) yes, would you like to do yoga with me?
           </div>
         
         powered by
-        <a href="https://www.mkdocs.org">MkDocs</a>
+        <a href="https://www.mkdocs.org" target="_blank" rel="noopener">MkDocs</a>
         and
-        <a href="https://squidfunk.github.io/mkdocs-material/">
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
           Material for MkDocs</a>
       </div>
       
   <div class="md-footer-social">
     <link rel="stylesheet" href="../../assets/fonts/font-awesome.css">
     
-      <a href="https://github.com/robotuts" class="md-footer-social__link fa fa-github"></a>
+      <a href="https://github.com/robotuts" target="_blank" rel="noopener" title="github" class="md-footer-social__link fa fa-github"></a>
     
   </div>
 
@@ -1118,7 +1118,7 @@ u:^private(do you like yoga) yes, would you like to do yoga with me?
       
     </div>
     
-      <script src="../../assets/javascripts/application.808e90bb.js"></script>
+      <script src="../../assets/javascripts/application.98c7b6b1.js"></script>
       
         
         

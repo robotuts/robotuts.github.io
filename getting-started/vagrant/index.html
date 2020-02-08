@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.1">
     
     
       
@@ -46,7 +46,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/application.1b62728e.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application.592ad16c.css">
       
         <link rel="stylesheet" href="../../assets/stylesheets/application-palette.a8b3c06d.css">
       
@@ -121,7 +121,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="https://robotuts.github.io" title="Robotics Tutorials" class="md-header-nav__button md-logo">
+        <a href="https://robotuts.github.io" title="Robotics Tutorials" aria-label="Robotics Tutorials" class="md-header-nav__button md-logo">
           
             <i class="md-icon"></i>
           
@@ -152,7 +152,7 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <input type="text" class="md-search__input" aria-label="search" name="query" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
       <label class="md-icon md-search__icon" for="__search"></label>
       <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
         &#xE5CD;
@@ -405,8 +405,8 @@ SDK на Windows и macOS используем Vagrant. Vagrant помогает
 Debian, список доступных образов можно найти на сайте
 <a href="https://app.vagrantup.com/bento/boxes">bento</a>. На момент написания статьи
 актуальная версия &mdash; debian-8.7.</p>
-<div class="codehilite"><pre><span></span>vagrant box add bento/debian-8.7
-</pre></div>
+<div class="codehilite"><pre><span></span><code>vagrant box add bento/debian-8.7
+</code></pre></div>
 
 <p>Перейдем в папку, в которой будем работать и выполним команду инициализации
 Vagrant.</p>
@@ -415,11 +415,11 @@ Vagrant.</p>
 <p>Команда <code>cd</code> в Windows ведет себя не так, как команда <code>cd</code> в Unix или Linux
 системах. Для перехода на определенный диск сначала нужно выполнить команду
 <code>d:</code> (в случае диска D), либо добавить ключ <code>/d</code> в команду:
-<div class="codehilite"><pre><span></span>cd /d d:\Projects\Robots_Labs
-</pre></div></p>
+<div class="codehilite"><pre><span></span><code>cd /d d:\Projects\Robots_Labs
+</code></pre></div></p>
 </div>
-<div class="codehilite"><pre><span></span>vagrant init bento/debian-8.7
-</pre></div>
+<div class="codehilite"><pre><span></span><code>vagrant init bento/debian-8.7
+</code></pre></div>
 
 <p>Данная команда создаст в текущем каталоге конфигурационный файл Vagrantfile.
 Откроем файл и заменим его следующим содержанием.</p>
@@ -446,7 +446,7 @@ Vagrant.</p>
 21
 22
 23
-24</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c1"># -*- mode: ruby -*-</span>
+24</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="c1"># -*- mode: ruby -*-</span>
 <span class="c1"># vi: set ft=ruby :</span>
 
 <span class="no">Vagrant</span><span class="o">.</span><span class="n">configure</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">config</span><span class="o">|</span>
@@ -470,7 +470,7 @@ Vagrant.</p>
 <span class="sh">    sudo apt-get update</span>
 <span class="dl">  SHELL</span>
 <span class="k">end</span>
-</pre></div>
+</code></pre></div>
 </td></tr></table>
 
 <blockquote>
@@ -481,25 +481,25 @@ Vagrant.</p>
 <p>Приведенные значения выделяемых ресурсов можно изменить для конкретной машины
 или задачи. Для некоторых задач может потребоваться больше оперативной памяти.</p>
 <p>Запустим машину</p>
-<div class="codehilite"><pre><span></span>vagrant up
-</pre></div>
+<div class="codehilite"><pre><span></span><code>vagrant up
+</code></pre></div>
 
 <p>Первый раз виртуалка устанавливается, это может занимать какое-то время, в
 следующий раз она будет запускаться быстрее.</p>
 <p>После того, как машина выполнит процесс настройки и запустится, можно
 подключиться к ней</p>
-<div class="codehilite"><pre><span></span>vagrant ssh
-</pre></div>
+<div class="codehilite"><pre><span></span><code>vagrant ssh
+</code></pre></div>
 
 <p>После этого можно приступить к <a href="../install-sdk/">установке SDK</a>. Выход из
 Vagrant осущствляется командой <code>exit</code>.</p>
 <p>После завершения работы виртуальную машину нужно выключить</p>
-<div class="codehilite"><pre><span></span>vagrant halt
-</pre></div>
+<div class="codehilite"><pre><span></span><code>vagrant halt
+</code></pre></div>
 
 <p>Если виртуальная машина больше не нужна, ее можно удалить комадной</p>
-<div class="codehilite"><pre><span></span>vagrant destroy
-</pre></div>
+<div class="codehilite"><pre><span></span><code>vagrant destroy
+</code></pre></div>
                 
                   
                 
@@ -578,16 +578,16 @@ Vagrant осущствляется командой <code>exit</code>.</p>
           </div>
         
         powered by
-        <a href="https://www.mkdocs.org">MkDocs</a>
+        <a href="https://www.mkdocs.org" target="_blank" rel="noopener">MkDocs</a>
         and
-        <a href="https://squidfunk.github.io/mkdocs-material/">
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
           Material for MkDocs</a>
       </div>
       
   <div class="md-footer-social">
     <link rel="stylesheet" href="../../assets/fonts/font-awesome.css">
     
-      <a href="https://github.com/robotuts" class="md-footer-social__link fa fa-github"></a>
+      <a href="https://github.com/robotuts" target="_blank" rel="noopener" title="github" class="md-footer-social__link fa fa-github"></a>
     
   </div>
 
@@ -597,7 +597,7 @@ Vagrant осущствляется командой <code>exit</code>.</p>
       
     </div>
     
-      <script src="../../assets/javascripts/application.808e90bb.js"></script>
+      <script src="../../assets/javascripts/application.98c7b6b1.js"></script>
       
         
         
