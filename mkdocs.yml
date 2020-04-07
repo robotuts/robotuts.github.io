@@ -31,7 +31,7 @@ extra:
     languages: 'en, ru'
     tokenizer: '[\s\-]+'
   social:
-    - type: 'github'
+    - icon: 'fontawesome/brands/github'
       link: 'https://github.com/robotuts'
   disqus: 'robotuts'
 
