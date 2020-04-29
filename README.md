@@ -13,6 +13,8 @@ This is the repository with the [Robotics Tutorials][robotuts] website source co
   * Awesome [Material theme][mkdocs-material] by [Martin Donath][squidfunk]
   * [Github Pages][gh-pages] provides free hosting for static sites
 
+**[ ~ Dependencies scanned by PyUp.io ~ ]**
+
 [gh-pages]: https://pages.github.com/
 [mkdocs]: http://mkdocs.org/
 [mkdocs-material]: https://github.com/squidfunk/mkdocs-material
