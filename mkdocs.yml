@@ -16,8 +16,9 @@ copyright: 'Copyright &copy; 2016 - 2020 <a href="https://leonidboykov.com">Leon
 theme:
   name: 'material'
   palette:
-    primary: 'light blue'
-    accent: 'light blue'
+    scheme: 'preference'
+    primary: 'indigo'
+    accent: 'indigo'
   font:
     text: 'Roboto'
     code: 'Roboto Mono'
