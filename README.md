@@ -1,5 +1,5 @@
 # Robotics Tutorials
-[![Build Status](https://travis-ci.org/robotuts/robotuts.github.io.svg?branch=source)](https://travis-ci.org/robotuts/robotuts.github.io)
+![Publish docs via Github Pages](https://github.com/robotuts/robotuts.github.io/workflows/Publish%20docs%20via%20Github%20Pages/badge.svg)
 
 This is the repository with the [Robotics Tutorials][robotuts] website source code.
 
