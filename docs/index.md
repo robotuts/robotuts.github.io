@@ -1,6 +1,4 @@
 ## Добро пожаловать на RoboTuts
-[![Build Status](https://travis-ci.org/robotuts/robotuts.github.io.svg?branch=source)](https://travis-ci.org/robotuts/robotuts.github.io)
-[![Updates](https://pyup.io/repos/github/robotuts/robotuts.github.io/shield.svg)](https://pyup.io/repos/github/robotuts/robotuts.github.io/)
 
 Приветствуем вас на сайте Robotics Tutorials (RoboTuts)! Данный сайт создан с
 целью обучить студентов работе с роботами Aldebaran Nao. В курс уроков входит
