@@ -1,6 +1,4 @@
 
-
-
 <!doctype html>
 <html lang="ru" class="no-js">
   <head>
@@ -11,13 +9,14 @@
         <meta name="description" content="Уроки по робототехнике для студентов">
       
       
-        <link rel="canonical" href="https://robotuts.github.io/nao/lab3/">
-      
       
         <meta name="author" content="Leonid Boykov">
       
+      
+        <link rel="canonical" href="https://robotuts.github.io/nao/lab3/">
+      
       <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.12">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.4">
     
     
       
@@ -25,20 +24,22 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.4dd2dd8d.min.css">
-      
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.6a5ad368.min.css">
-      
+      <link rel="stylesheet" href="../../assets/stylesheets/main.15aa0b43.min.css">
       
         
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.75751829.min.css">
         
-        <meta name="theme-color" content="#4051b5">
+          
+          
+          <meta name="theme-color" content="#4051b5">
+        
       
     
     
     
       
-        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
         <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
       
@@ -59,10 +60,13 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="preference" data-md-color-primary="indigo" data-md-color-accent="indigo">
-  
     
-      <script>matchMedia("(prefers-color-scheme: dark)").matches&&document.body.setAttribute("data-md-color-scheme","slate")</script>
+    
+    <body dir="ltr" data-md-color-scheme="preference" data-md-color-primary="indigo" data-md-color-accent="indigo">
+      
+        <script>matchMedia("(prefers-color-scheme: dark)").matches&&document.body.setAttribute("data-md-color-scheme","slate")</script>
+      
+  
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -79,7 +83,9 @@
       
     </div>
     
-      <header class="md-header" data-md-component="header">
+      
+
+<header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid" aria-label="Header">
     <a href="https://robotuts.github.io" title="Robotics Tutorials" class="md-header-nav__button md-logo" aria-label="Robotics Tutorials">
       
@@ -91,18 +97,20 @@
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
     </label>
     <div class="md-header-nav__title" data-md-component="header-title">
-      
-        <div class="md-header-nav__ellipsis">
-          <span class="md-header-nav__topic md-ellipsis">
+      <div class="md-header-nav__ellipsis">
+        <div class="md-header-nav__topic">
+          <span class="md-ellipsis">
             Robotics Tutorials
           </span>
-          <span class="md-header-nav__topic md-ellipsis">
+        </div>
+        <div class="md-header-nav__topic">
+          <span class="md-ellipsis">
             
               Урок 3: Введение в libqi-python
             
           </span>
         </div>
-      
+      </div>
     </div>
     
       <label class="md-header-nav__button md-icon" for="__search">
@@ -113,7 +121,7 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
       <label class="md-search__icon md-icon" for="__search">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
@@ -154,8 +162,6 @@
     
     <div class="md-container" data-md-component="container">
       
-        
-      
       
         
       
@@ -163,10 +169,16 @@
         <div class="md-main__inner md-grid">
           
             
-              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
-                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+                    
+
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="https://robotuts.github.io" title="Robotics Tutorials" class="md-nav__button md-logo" aria-label="Robotics Tutorials">
       
@@ -197,8 +209,9 @@
       
 
 
+
   <li class="md-nav__item">
-    <a href="../.." title="Главная" class="md-nav__link">
+    <a href="../.." class="md-nav__link">
       Главная
     </a>
   </li>
@@ -209,9 +222,12 @@
       
 
 
+
+  
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" >
     
     <label class="md-nav__link" for="nav-2">
       Подготовка
@@ -230,8 +246,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../../getting-started/install-sdk/" title="Установка SDK" class="md-nav__link">
+    <a href="../../getting-started/install-sdk/" class="md-nav__link">
       Установка SDK
     </a>
   </li>
@@ -242,8 +259,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../../getting-started/vagrant/" title="Vagrant" class="md-nav__link">
+    <a href="../../getting-started/vagrant/" class="md-nav__link">
       Vagrant
     </a>
   </li>
@@ -258,10 +276,13 @@
       
       
 
+
   
 
 
+  
   <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
     
       <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
     
@@ -282,8 +303,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../lab1/" title="Урок 1: Основы в Choregraphe" class="md-nav__link">
+    <a href="../lab1/" class="md-nav__link">
       Урок 1: Основы в Choregraphe
     </a>
   </li>
@@ -294,8 +316,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../lab2/" title="Урок 2: Введение в QiChat" class="md-nav__link">
+    <a href="../lab2/" class="md-nav__link">
       Урок 2: Введение в QiChat
     </a>
   </li>
@@ -304,6 +327,7 @@
           
           
           
+
 
   
 
@@ -318,7 +342,7 @@
         <span class="md-nav__icon md-icon"></span>
       </label>
     
-    <a href="./" title="Урок 3: Введение в libqi-python" class="md-nav__link md-nav__link--active">
+    <a href="./" class="md-nav__link md-nav__link--active">
       Урок 3: Введение в libqi-python
     </a>
     
@@ -407,7 +431,8 @@
               </div>
             
             
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -493,9 +518,6 @@
                   </a>
                 
                 
-                  
-                
-                
                   <h1>Урок 3: Введение в libqi-python</h1>
                 
                 <div class="admonition note">
@@ -531,11 +553,9 @@ World</em></p>
 <span class="n">tts</span><span class="o">.</span><span class="n">say</span><span class="p">(</span><span class="s2">&quot;Hello, World&quot;</span><span class="p">)</span>
 </code></pre></div>
 </td></tr></table>
-
 <p>Запустите код командой:</p>
 <div class="highlight"><pre><span></span><code>python say-hello.py --qi-url<span class="o">=</span>tcp://&lt;robot-ip&gt;:9559
 </code></pre></div>
-
 <p>Робот должен произнести &ldquo;Hello, World&rdquo;.</p>
 <p>Помимо <code>ALTextToSpeech</code> существуют и другие модули сервисы. С полным списком
 можно ознакомиться в документации по адресу
@@ -572,7 +592,6 @@ World</em></p>
 <span class="n">motion</span><span class="o">.</span><span class="n">rest</span><span class="p">()</span>
 </code></pre></div>
 </td></tr></table>
-
 <blockquote>
 <ol>
 <li>речевая функция</li>
@@ -636,7 +655,6 @@ World</em></p>
 <span class="n">motion</span><span class="o">.</span><span class="n">rest</span><span class="p">()</span>
 </code></pre></div>
 </td></tr></table>
-
 <p>Первая часть алгоритма не изменилась, но функция <code>runBehaviour()</code> вызывается с
 ключом <code>_async=True</code>, которое производит действие <em>асинхронно</em>. В данном случае
 робот помашет рукой и одновременно произнесет <code>Hello, my name is Nao</code>. Ожидание
@@ -696,7 +714,6 @@ World</em></p>
 <span class="c1">#     X:-0.728, Y: 0.316, Z: -10.318</span>
 </code></pre></div>
 </td></tr></table>
-
 <h3 id="_5">События<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
 <p>В лабораторной работе 1 мы обращались к событиям некоторых сенсоров робота.
 Аналогичные действия можно выполнять и на Python, для этого понадобится метод
@@ -740,7 +757,6 @@ World</em></p>
 <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
 </code></pre></div>
 </td></tr></table>
-
 <p>В конце скрипта вызывается <code>run()</code>, что заставляет программу работать, пока ее
 не прервет пользователь сочетанием клавиш <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-c">C</kbd></span>. В данной программе мы
 создаем подписчика <code>subscriber</code> на событие <code>FrontTactilTouched</code> (касание
@@ -766,7 +782,6 @@ World</em></p>
 </span>        <span class="bp">self</span><span class="o">.</span><span class="n">tts</span><span class="o">.</span><span class="n">say</span><span class="p">(</span><span class="s2">&quot;Hello, </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">name</span><span class="p">)</span>
 </code></pre></div>
 </td></tr></table>
-
 <blockquote>
 <ol>
 <li>Конструктор класса на языке Python. Аргумент <code>session</code> используем для вызова
@@ -784,7 +799,6 @@ World</em></p>
 <span class="n">app</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">registerService</span><span class="p">(</span><span class="s2">&quot;Hello&quot;</span><span class="p">,</span> <span class="n">hello</span><span class="p">)</span>
 </code></pre></div>
 </td></tr></table>
-
 <p>Вместе с инициализацией <code>Application</code> программа-сервис выглядит следующим образом:</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
@@ -829,7 +843,6 @@ World</em></p>
 <span class="hll"><span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
 </span></code></pre></div>
 </td></tr></table>
-
 <blockquote>
 <ol>
 <li>Ожидается, что сервер будет зарегистрирован в системе до тех пор, пока он не
@@ -860,7 +873,6 @@ World</em></p>
 </span><span class="n">hello</span><span class="o">.</span><span class="n">greet</span><span class="p">(</span><span class="s2">&quot;dear user&quot;</span><span class="p">)</span>
 </code></pre></div>
 </td></tr></table>
-
 <blockquote>
 <ol>
 <li>Имя сервиса, которое мы использовали при его регистрации.</li>
@@ -906,7 +918,7 @@ hand</code> в зависимости от того, за какую руку е
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../lab2/" title="Урок 2: Введение в QiChat" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../lab2/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -957,15 +969,15 @@ hand</code> в зависимости от того, за какую руку е
       
     </div>
     
-      <script src="../../assets/javascripts/vendor.3636a4ec.min.js"></script>
-      <script src="../../assets/javascripts/bundle.e9fe3281.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "search.config.lang": "ru", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e # \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439"}</script>
+      <script src="../../assets/javascripts/vendor.93c04032.min.js"></script>
+      <script src="../../assets/javascripts/bundle.83e5331e.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "search.config.lang": "ru", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "\u041f\u043e\u0438\u0441\u043a", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e # \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
       
       <script>
         app = initialize({
           base: "../..",
           features: [],
           search: Object.assign({
-            worker: "../../assets/javascripts/worker/search.5eca75d3.min.js"
+            worker: "../../assets/javascripts/worker/search.8c7e0a7e.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>
