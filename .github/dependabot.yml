@@ -7,3 +7,7 @@ updates:
     assignees:
       - "leonidboykov"
     target-branch: "source"
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    shedule:
+      interval: "daily"
